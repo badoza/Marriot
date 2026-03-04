@@ -79,7 +79,7 @@
             100% { background-position: 468px 0; }
         }
 
-        /* Creative Logo Animation: Metallic Shine Sweep */
+        /* Creative Header Logo Animation: Metallic Shine Sweep */
         .logo-container {
             position: relative;
             overflow: hidden;
@@ -102,6 +102,21 @@
             0% { left: -100%; }
             15% { left: 200%; }
             100% { left: 200%; }
+        }
+
+        /* MAGICAL FOOTER LOGO CSS: Turns White JPG to Transparent Grey */
+        .footer-logo-fx {
+            /* Invert flips white BG to black, grayscale makes colors grey, brightness boosts the grey */
+            filter: invert(1) grayscale(1) brightness(1.8);
+            /* Screen mode makes the black background completely invisible, leaving only the light logo! */
+            mix-blend-mode: screen;
+            transition: all 0.5s ease;
+            opacity: 0.85;
+        }
+        .footer-logo-fx:hover {
+            opacity: 1;
+            filter: invert(1) grayscale(1) brightness(2.5) drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+            transform: scale(1.05) translateY(-2px);
         }
     </style>
 </head>
@@ -409,23 +424,13 @@
                 
                 <!-- Brand Info -->
                 <div class="md:col-span-5">
-                    <!-- Fully Completed Footer Logo Replica in Sleek Greyscale -->
-                    <div class="flex items-center mb-8">
-                        <svg viewBox="0 0 500 120" class="h-10 md:h-14 w-auto opacity-90 hover:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg">
-                            <g transform="translate(10, 10)">
-                                <!-- Grey Dot -->
-                                <circle cx="28" cy="82" r="22" fill="#94a3b8"/>
-                                <!-- Light Grey Pill 1 -->
-                                <path d="M 35 70 L 60 20 A 15 15 0 0 1 85 30 L 60 80 A 15 15 0 0 1 35 70 Z" fill="#f1f5f9"/>
-                                <!-- Light Grey Pill 2 -->
-                                <path d="M 90 70 L 115 20 A 15 15 0 0 1 140 30 L 115 80 A 15 15 0 0 1 90 70 Z" fill="#f1f5f9"/>
-                                <!-- Text ARRIOTT -->
-                                <text x="155" y="85" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="80" fill="#f1f5f9" letter-spacing="-3">ARRIOTT</text>
-                                <!-- Text PHARMACEUTICALS -->
-                                <text x="165" y="112" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#94a3b8" letter-spacing="1">PHARMACEUTICALS</text>
-                            </g>
-                        </svg>
+                    
+                    <!-- PERFECT GREYSCALE FOOTER LOGO USING CSS BLEND MODE -->
+                    <!-- This takes Marriott.JPG.jpeg and magically turns it into a transparent grey logo! -->
+                    <div class="mb-8 w-48 md:w-64 cursor-pointer" onclick="navigateTo('home')">
+                        <img src="Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="w-full h-auto object-contain footer-logo-fx" onerror="this.style.display='none';">
                     </div>
+
                     <p class="text-gray-400 text-sm md:text-base mb-8 md:mb-10 leading-relaxed font-light max-w-sm">
                         A leader in gynecological pharmaceuticals. We are dedicated to improving women's healthcare through scientifically formulated, deeply researched, and globally certified medical products.
                     </p>
