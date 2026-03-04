@@ -152,12 +152,12 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full shadow-lg border-b border-gray-100 z-40">
-            <div class="flex flex-col px-6 pt-4 pb-8 space-y-5">
-                <button onclick="navigateTo('home'); toggleMobileMenu()" class="text-left text-marriott-slate font-medium uppercase text-sm border-b border-gray-50 pb-2">Home</button>
-                <button onclick="navigateTo('home'); setTimeout(() => document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'}), 100); toggleMobileMenu()" class="text-left text-marriott-slate font-medium uppercase text-sm border-b border-gray-50 pb-2">Therapeutic Areas</button>
-                <a href="#contact" onclick="toggleMobileMenu()" class="text-marriott-navy font-bold uppercase text-sm">Partner With Us</a>
+        <!-- Mobile Menu Panel (Frosted glass for premium mobile feel) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl absolute w-full shadow-lg border-b border-gray-100 z-40">
+            <div class="flex flex-col px-6 pt-6 pb-8 space-y-6">
+                <button onclick="navigateTo('home'); toggleMobileMenu()" class="text-left text-marriott-slate font-medium uppercase text-sm border-b border-gray-100 pb-3 hover:text-marriott-navy">Home</button>
+                <button onclick="navigateTo('home'); setTimeout(() => document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'}), 100); toggleMobileMenu()" class="text-left text-marriott-slate font-medium uppercase text-sm border-b border-gray-100 pb-3 hover:text-marriott-navy">Therapeutic Areas</button>
+                <a href="#contact" onclick="toggleMobileMenu()" class="text-marriott-navy font-bold uppercase text-sm inline-block pt-2">Partner With Us <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
             </div>
         </div>
     </nav>
@@ -242,7 +242,8 @@
                     
                     <!-- 1. Menstruation -->
                     <div onclick="navigateToCategory('menstruation')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-64 md:h-72 overflow-hidden shimmer">
+                        <!-- h-56 on mobile so users see more of the grid without endless scrolling -->
+                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
                             <img src="https://images.unsplash.com/photo-1517181055531-15286526eb66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Menstruation" class="w-full h-full object-cover premium-card-img absolute inset-0">
                             <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
@@ -259,7 +260,7 @@
 
                     <!-- 2. Hormonal Imbalance -->
                     <div onclick="navigateToCategory('hormonal')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-64 md:h-72 overflow-hidden shimmer">
+                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
                             <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hormonal Imbalance" class="w-full h-full object-cover premium-card-img absolute inset-0">
                             <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
@@ -276,7 +277,7 @@
 
                     <!-- 3. Antibiotic -->
                     <div onclick="navigateToCategory('antibiotic')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-64 md:h-72 overflow-hidden shimmer">
+                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
                             <img src="https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Antibiotic" class="w-full h-full object-cover premium-card-img absolute inset-0">
                             <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
@@ -293,7 +294,7 @@
 
                     <!-- 4. Pregnancy -->
                     <div onclick="navigateToCategory('pregnancy')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-64 md:h-72 overflow-hidden shimmer">
+                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
                             <img src="https://images.unsplash.com/photo-1531525645387-7f14be1bfc75?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pregnancy" class="w-full h-full object-cover premium-card-img absolute inset-0">
                             <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
@@ -310,7 +311,7 @@
 
                     <!-- 5. Nutritional Supplement -->
                     <div onclick="navigateToCategory('nutrition')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-64 md:h-72 overflow-hidden shimmer">
+                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
                             <img src="https://images.unsplash.com/photo-1550572017-edb7df62058a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nutritional Supplement" class="w-full h-full object-cover premium-card-img absolute inset-0">
                             <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
@@ -327,7 +328,7 @@
 
                     <!-- 6. Other -->
                     <div onclick="navigateToCategory('other')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-64 md:h-72 overflow-hidden shimmer">
+                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
                             <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Other Products" class="w-full h-full object-cover premium-card-img absolute inset-0">
                             <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
@@ -359,7 +360,7 @@
                 <img id="cat-hero-bg" src="" class="w-full h-full object-cover filter blur-sm">
             </div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <button onclick="navigateTo('home')" class="text-marriott-sky hover:text-white transition-colors flex items-center text-xs md:text-sm font-semibold tracking-wide uppercase mb-6 md:mb-8">
+                <button onclick="navigateTo('home')" class="text-marriott-sky hover:text-white transition-colors flex items-center text-xs md:text-sm font-semibold tracking-wide uppercase mb-6 md:mb-8 py-2">
                     <i class="fas fa-long-arrow-alt-left mr-2"></i> Back to Portfolio
                 </button>
                 <div class="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
@@ -395,14 +396,17 @@
                 
                 <!-- Brand Info -->
                 <div class="md:col-span-4">
-                    <!-- Footer Logo Replica -->
+                    <!-- Fully Completed Footer Logo Replica -->
                     <div class="flex items-center gap-2 mb-6 opacity-90">
-                        <svg viewBox="0 0 450 120" class="h-8 md:h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
+                        <svg viewBox="0 0 450 120" class="h-10 md:h-12 w-auto" xmlns="http://www.w3.org/2000/svg">
                             <g transform="translate(10, 10)">
                                 <circle cx="28" cy="78" r="20" fill="#8AD2F1" stroke="#333" stroke-width="0.5"/>
                                 <rect x="25" y="0" width="32" height="95" rx="16" transform="rotate(28 41 47)" fill="#ffffff"/>
                                 <rect x="85" y="0" width="32" height="95" rx="16" transform="rotate(28 101 47)" fill="#ffffff"/>
                                 <text x="145" y="85" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="88" fill="#ffffff" letter-spacing="-2">ARRIOTT</text>
+                                <text x="145" y="115" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#cbd5e1" letter-spacing="1">PHARMACEUTICALS</text>
+                                <line x1="0" y1="108" x2="135" y2="108" stroke="#cbd5e1" stroke-width="2"/>
+                                <line x1="365" y1="108" x2="450" y2="108" stroke="#cbd5e1" stroke-width="2"/>
                             </g>
                         </svg>
                     </div>
@@ -421,10 +425,10 @@
                 <div class="md:col-span-3">
                     <h4 class="text-white font-serif text-lg md:text-xl mb-4 md:mb-6">Corporate Info</h4>
                     <ul class="space-y-3 md:space-y-4">
-                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> About the Company</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> Quality Policy (ISO/GMP)</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> Research & Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> Global Distribution</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center py-1"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> About the Company</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center py-1"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> Quality Policy (ISO/GMP)</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center py-1"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> Research & Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center py-1"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> Global Distribution</a></li>
                     </ul>
                 </div>
 
@@ -455,8 +459,8 @@
             <div class="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-500 uppercase tracking-widest text-center md:text-left">
                 <p class="mb-3 md:mb-0">&copy; 2026 Marriott Pharmaceuticals PVT. LTD.</p>
                 <div class="space-x-4 md:space-x-6">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-white transition-colors p-2">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors p-2">Terms of Use</a>
                 </div>
             </div>
         </div>
@@ -933,7 +937,7 @@
                     // Added a fallback generic pill image from Unsplash if the local file is missing.
                     const cardHTML = `
                         <div class="flex flex-col sm:flex-row bg-white shadow-card hover:shadow-premium transition-all duration-300 rounded-lg overflow-hidden group border border-gray-100">
-                            <div class="sm:w-2/5 h-48 md:h-56 sm:h-auto bg-white p-3 md:p-4 relative overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-gray-100">
+                            <div class="w-full sm:w-2/5 h-44 md:h-56 sm:h-auto bg-white p-3 md:p-4 relative overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-gray-100">
                                 <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500" 
                                      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';">
                             </div>
