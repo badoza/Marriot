@@ -27,8 +27,8 @@
                         }
                     },
                     boxShadow: {
-                        'premium': '0 20px 40px -15px rgba(0, 71, 143, 0.1)',
-                        'card': '0 10px 30px -10px rgba(77, 90, 122, 0.15)',
+                        'premium': '0 20px 40px -15px rgba(0, 71, 143, 0.15)',
+                        'card': '0 10px 30px -10px rgba(77, 90, 122, 0.1)',
                         'glow': '0 0 20px rgba(105, 190, 235, 0.4)'
                     }
                 }
@@ -50,16 +50,16 @@
         /* Premium Image Hover Effects */
         .premium-card-img {
             transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease;
-            filter: brightness(0.85) contrast(1.1);
+            filter: brightness(0.9) contrast(1.05);
         }
         .group:hover .premium-card-img {
-            transform: scale(1.05);
+            transform: scale(1.08);
             filter: brightness(1) contrast(1.1);
         }
         
-        /* Elegant Gradient Overlay */
+        /* Elegant Gradient Overlay tailored for product images as backgrounds */
         .gradient-overlay {
-            background: linear-gradient(to top, rgba(0, 71, 143, 0.95) 0%, rgba(77, 90, 122, 0.5) 50%, transparent 100%);
+            background: linear-gradient(to top, rgba(0, 71, 143, 0.98) 0%, rgba(0, 71, 143, 0.7) 40%, rgba(77, 90, 122, 0.1) 100%);
         }
 
         /* Loading shimmer for images */
@@ -84,7 +84,7 @@
             position: relative;
             overflow: hidden;
             display: inline-block;
-            border-radius: 4px;
+            border-radius: 8px;
         }
         .logo-container::after {
             content: '';
@@ -95,7 +95,7 @@
             height: 100%;
             background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
             transform: skewX(-25deg);
-            animation: shine 5s infinite;
+            animation: shine 6s infinite;
             pointer-events: none;
         }
         @keyframes shine {
@@ -108,7 +108,7 @@
 <body class="bg-marriott-light text-marriott-charcoal font-sans antialiased overflow-x-hidden">
 
     <!-- Premium Navigation -->
-    <nav class="bg-white/95 backdrop-blur-md fixed w-full z-50 border-b border-gray-100 shadow-sm transition-all duration-300">
+    <nav class="bg-white/95 backdrop-blur-xl fixed w-full z-50 border-b border-gray-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20 md:h-24">
                 
@@ -118,46 +118,52 @@
                     <img id="primary-logo" src="Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="h-12 md:h-16 w-auto object-contain transform hover:scale-105 transition-transform duration-300" 
                          onerror="this.style.display='none'; document.getElementById('svg-fallback-logo').style.display='block';">
                     
-                    <!-- PERFECT SVG REPLICA FALLBACK -->
-                    <svg id="svg-fallback-logo" viewBox="0 0 450 120" class="h-10 md:h-14 w-auto transform hover:scale-105 transition-transform duration-300" style="display: none;" xmlns="http://www.w3.org/2000/svg">
+                    <!-- PERFECT SVG REPLICA FALLBACK (Official Colors) -->
+                    <svg id="svg-fallback-logo" viewBox="0 0 650 160" class="h-10 md:h-14 w-auto transform hover:scale-105 transition-transform duration-300" style="display: none;" xmlns="http://www.w3.org/2000/svg">
                         <g transform="translate(10, 10)">
-                            <circle cx="28" cy="78" r="20" fill="#8AD2F1" stroke="#333" stroke-width="0.5"/>
-                            <rect x="25" y="0" width="32" height="95" rx="16" transform="rotate(28 41 47)" fill="#113F8C"/>
-                            <rect x="85" y="0" width="32" height="95" rx="16" transform="rotate(28 101 47)" fill="#113F8C"/>
-                            <text x="145" y="85" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="88" fill="#4D5A7A" letter-spacing="-2">ARRIOTT</text>
-                            <text x="145" y="115" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#222" letter-spacing="1">PHARMACEUTICALS</text>
-                            <line x1="0" y1="108" x2="135" y2="108" stroke="#4D5A7A" stroke-width="2"/>
-                            <line x1="365" y1="108" x2="450" y2="108" stroke="#4D5A7A" stroke-width="2"/>
+                            <!-- Light Blue Circle -->
+                            <circle cx="45" cy="95" r="28" fill="#8AD2F1"/>
+                            <!-- Dark Blue Pill 1 -->
+                            <rect x="50" y="5" width="40" height="115" rx="20" transform="rotate(30 70 62)" fill="#113F8C"/>
+                            <!-- Dark Blue Pill 2 -->
+                            <rect x="130" y="5" width="40" height="115" rx="20" transform="rotate(30 150 62)" fill="#113F8C"/>
+                            <!-- Text ARRIOTT -->
+                            <text x="200" y="105" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="115" fill="#4D5A7A" letter-spacing="-3">ARRIOTT</text>
+                            <!-- Text PHARMACEUTICALS -->
+                            <text x="215" y="142" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#222" letter-spacing="1.5">PHARMACEUTICALS</text>
+                            <!-- Lines -->
+                            <line x1="0" y1="135" x2="200" y2="135" stroke="#4D5A7A" stroke-width="3"/>
+                            <line x1="475" y1="135" x2="640" y2="135" stroke="#4D5A7A" stroke-width="3"/>
                         </g>
                     </svg>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-10">
-                    <button onclick="navigateTo('home')" class="text-marriott-slate hover:text-marriott-navy font-medium transition duration-300 text-sm tracking-wide uppercase">Home</button>
-                    <button onclick="navigateTo('home')" class="text-marriott-slate hover:text-marriott-navy font-medium transition duration-300 text-sm tracking-wide uppercase">About Firm</button>
-                    <button onclick="navigateTo('home'); setTimeout(() => document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'}), 100);" class="text-marriott-slate hover:text-marriott-navy font-medium transition duration-300 text-sm tracking-wide uppercase">Therapeutic Areas</button>
+                    <button onclick="navigateTo('home')" class="text-marriott-slate hover:text-marriott-navy font-bold transition duration-300 text-sm tracking-widest uppercase">Home</button>
+                    <button onclick="navigateTo('home')" class="text-marriott-slate hover:text-marriott-navy font-bold transition duration-300 text-sm tracking-widest uppercase">About Firm</button>
+                    <button onclick="navigateTo('home'); setTimeout(() => document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'}), 100);" class="text-marriott-slate hover:text-marriott-navy font-bold transition duration-300 text-sm tracking-widest uppercase">Therapeutic Areas</button>
                     
-                    <a href="#contact" class="bg-marriott-navy hover:bg-marriott-slate text-white px-8 py-3 rounded-sm font-medium transition-colors duration-300 shadow-premium text-sm tracking-wide uppercase">
+                    <a href="#contact" class="bg-marriott-navy hover:bg-marriott-slate text-white px-8 py-3 rounded-full font-bold transition-colors duration-300 shadow-premium text-sm tracking-wide uppercase">
                         Partner With Us
                     </a>
                 </div>
 
                 <!-- Mobile Hamburger Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="text-marriott-navy focus:outline-none p-2">
-                        <i class="fas fa-bars text-2xl"></i>
+                    <button onclick="toggleMobileMenu()" class="text-marriott-navy focus:outline-none p-2 bg-marriott-light rounded-lg shadow-sm border border-gray-100">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Mobile Menu Panel (Frosted glass for premium mobile feel) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl absolute w-full shadow-lg border-b border-gray-100 z-40">
-            <div class="flex flex-col px-6 pt-6 pb-8 space-y-6">
-                <button onclick="navigateTo('home'); toggleMobileMenu()" class="text-left text-marriott-slate font-medium uppercase text-sm border-b border-gray-100 pb-3 hover:text-marriott-navy">Home</button>
-                <button onclick="navigateTo('home'); setTimeout(() => document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'}), 100); toggleMobileMenu()" class="text-left text-marriott-slate font-medium uppercase text-sm border-b border-gray-100 pb-3 hover:text-marriott-navy">Therapeutic Areas</button>
-                <a href="#contact" onclick="toggleMobileMenu()" class="text-marriott-navy font-bold uppercase text-sm inline-block pt-2">Partner With Us <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-2xl absolute w-full shadow-2xl border-b border-gray-100 z-40 rounded-b-3xl">
+            <div class="flex flex-col px-6 pt-6 pb-10 space-y-6">
+                <button onclick="navigateTo('home'); toggleMobileMenu()" class="text-left text-marriott-slate font-bold uppercase tracking-widest text-sm border-b border-gray-100 pb-3 hover:text-marriott-navy">Home</button>
+                <button onclick="navigateTo('home'); setTimeout(() => document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'}), 100); toggleMobileMenu()" class="text-left text-marriott-slate font-bold uppercase tracking-widest text-sm border-b border-gray-100 pb-3 hover:text-marriott-navy">Therapeutic Areas</button>
+                <a href="#contact" onclick="toggleMobileMenu()" class="bg-marriott-navy text-white font-bold uppercase tracking-widest text-sm text-center py-4 rounded-xl shadow-premium mt-4">Partner With Us <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
             </div>
         </div>
     </nav>
@@ -177,8 +183,8 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 pb-20 md:pt-32 md:pb-40">
                 <div class="max-w-2xl">
                     <div class="flex items-center gap-4 mb-6 md:mb-8">
-                        <div class="h-[2px] w-8 md:w-12 bg-marriott-sky shadow-glow"></div>
-                        <span class="text-marriott-navy font-bold tracking-widest uppercase text-xs md:text-sm">Advancing Women's Health</span>
+                        <div class="h-[3px] w-10 md:w-16 bg-marriott-sky shadow-glow rounded-full"></div>
+                        <span class="text-marriott-navy font-bold tracking-[0.2em] uppercase text-xs md:text-sm">Advancing Women's Health</span>
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-7xl font-serif text-marriott-charcoal leading-tight mb-6 md:mb-8">
                         Science-driven.<br>
@@ -188,10 +194,10 @@
                         Marriott Pharmaceuticals develops premier gynecological and therapeutic solutions. We blend rigorous clinical research with uncompromising quality to support women at every stage of life.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-marriott-navy text-white font-medium hover:bg-marriott-slate transition-colors shadow-premium tracking-wide uppercase text-sm text-center">
+                        <button onclick="document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-marriott-navy text-white font-bold hover:bg-marriott-slate transition-colors shadow-premium tracking-widest uppercase text-xs md:text-sm text-center rounded-full">
                             Explore Therapeutics
                         </button>
-                        <button class="px-8 py-4 border border-marriott-slate text-marriott-slate font-medium hover:bg-marriott-slate hover:text-white transition-colors tracking-wide uppercase text-sm text-center">
+                        <button class="px-8 py-4 border-2 border-marriott-slate text-marriott-slate font-bold hover:bg-marriott-slate hover:text-white transition-colors tracking-widest uppercase text-xs md:text-sm text-center rounded-full">
                             Our Heritage
                         </button>
                     </div>
@@ -204,20 +210,20 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 md:py-16 divide-x divide-white/20">
                     <div class="text-center px-2 md:px-4">
-                        <p class="text-3xl md:text-5xl font-serif text-white mb-2">WHO</p>
-                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-widest font-semibold">GMP Certified</p>
+                        <p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">WHO</p>
+                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">GMP Certified</p>
                     </div>
                     <div class="text-center px-2 md:px-4">
-                        <p class="text-3xl md:text-5xl font-serif text-white mb-2">ISO</p>
-                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-widest font-semibold">9001:2015 Quality</p>
+                        <p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">ISO</p>
+                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">9001:2015 Quality</p>
                     </div>
                     <div class="text-center px-2 md:px-4">
-                        <p class="text-3xl md:text-5xl font-serif text-white mb-2">15+</p>
-                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-widest font-semibold">Years Experience</p>
+                        <p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">15+</p>
+                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">Years Experience</p>
                     </div>
                     <div class="text-center px-2 md:px-4">
-                        <p class="text-3xl md:text-5xl font-serif text-white mb-2">100%</p>
-                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-widest font-semibold">Efficacy Tested</p>
+                        <p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">100%</p>
+                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">Efficacy Tested</p>
                     </div>
                 </div>
             </div>
@@ -229,116 +235,116 @@
                 
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16">
                     <div class="max-w-2xl">
-                        <h2 class="text-xs md:text-sm font-bold text-marriott-sky uppercase tracking-widest mb-2 md:mb-3">Our Portfolio</h2>
-                        <h3 class="text-3xl md:text-4xl font-serif text-marriott-navy">Therapeutic Areas</h3>
+                        <h2 class="text-xs md:text-sm font-bold text-marriott-sky uppercase tracking-[0.2em] mb-2 md:mb-3">Our Portfolio</h2>
+                        <h3 class="text-3xl md:text-5xl font-serif text-marriott-navy font-bold">Therapeutic Areas</h3>
                     </div>
                     <p class="text-marriott-slate md:w-1/3 mt-4 md:mt-0 font-light border-l-2 border-marriott-sky pl-4 text-sm md:text-base">
                         Select a therapeutic category below to view our comprehensive range of specialized pharmaceutical formulations.
                     </p>
                 </div>
                 
-                <!-- Elegant 3-Column Grid for 6 Categories -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Elegant 3-Column Grid for 6 Categories using Local Images -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     
                     <!-- 1. Menstruation -->
-                    <div onclick="navigateToCategory('menstruation')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <!-- h-56 on mobile so users see more of the grid without endless scrolling -->
-                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
-                            <img src="https://images.unsplash.com/photo-1517181055531-15286526eb66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Menstruation" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div onclick="navigateToCategory('menstruation')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
+                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
+                            <!-- Using first product image of the category as the rich background -->
+                            <img src="Man-a.jpg" alt="Menstruation" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1517181055531-15286526eb66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
-                            <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center text-white mb-4">
-                                    <i class="fas fa-tint text-sm"></i>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
+                                    <i class="fas fa-tint text-lg"></i>
                                 </div>
-                                <h4 class="text-xl md:text-2xl font-serif text-white mb-1">Menstruation</h4>
-                                <div class="h-[1px] w-0 bg-marriott-sky group-hover:w-12 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/80 text-xs md:text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">View Formulations <i class="fas fa-arrow-right ml-1 text-xs"></i></p>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Menstruation</h4>
+                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
+                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 2. Hormonal Imbalance -->
-                    <div onclick="navigateToCategory('hormonal')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
-                            <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hormonal Imbalance" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div onclick="navigateToCategory('hormonal')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
+                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
+                            <img src="hi-a.jpg" alt="Hormonal Imbalance" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
-                            <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center text-white mb-4">
-                                    <i class="fas fa-balance-scale text-sm"></i>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
+                                    <i class="fas fa-balance-scale text-lg"></i>
                                 </div>
-                                <h4 class="text-xl md:text-2xl font-serif text-white mb-1">Hormonal Imbalance</h4>
-                                <div class="h-[1px] w-0 bg-marriott-sky group-hover:w-12 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/80 text-xs md:text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">View Formulations <i class="fas fa-arrow-right ml-1 text-xs"></i></p>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Hormonal Care</h4>
+                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
+                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 3. Antibiotic -->
-                    <div onclick="navigateToCategory('antibiotic')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
-                            <img src="https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Antibiotic" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div onclick="navigateToCategory('antibiotic')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
+                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
+                            <img src="ant-a.jpg" alt="Antibiotic" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
-                            <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center text-white mb-4">
-                                    <i class="fas fa-capsules text-sm"></i>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
+                                    <i class="fas fa-capsules text-lg"></i>
                                 </div>
-                                <h4 class="text-xl md:text-2xl font-serif text-white mb-1">Antibiotic</h4>
-                                <div class="h-[1px] w-0 bg-marriott-sky group-hover:w-12 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/80 text-xs md:text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">View Formulations <i class="fas fa-arrow-right ml-1 text-xs"></i></p>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Antibiotics</h4>
+                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
+                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 4. Pregnancy -->
-                    <div onclick="navigateToCategory('pregnancy')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
-                            <img src="https://images.unsplash.com/photo-1531525645387-7f14be1bfc75?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pregnancy" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div onclick="navigateToCategory('pregnancy')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
+                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
+                            <img src="pre-a.jpg" alt="Pregnancy" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1531525645387-7f14be1bfc75?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
-                            <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center text-white mb-4">
-                                    <i class="fas fa-baby-carriage text-sm"></i>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
+                                    <i class="fas fa-baby-carriage text-lg"></i>
                                 </div>
-                                <h4 class="text-xl md:text-2xl font-serif text-white mb-1">Pregnancy</h4>
-                                <div class="h-[1px] w-0 bg-marriott-sky group-hover:w-12 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/80 text-xs md:text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">View Formulations <i class="fas fa-arrow-right ml-1 text-xs"></i></p>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Pregnancy</h4>
+                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
+                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 5. Nutritional Supplement -->
-                    <div onclick="navigateToCategory('nutrition')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
-                            <img src="https://images.unsplash.com/photo-1550572017-edb7df62058a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nutritional Supplement" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div onclick="navigateToCategory('nutrition')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
+                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
+                            <img src="ns-a.jpg" alt="Nutritional Supplement" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1550572017-edb7df62058a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
-                            <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center text-white mb-4">
-                                    <i class="fas fa-leaf text-sm"></i>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
+                                    <i class="fas fa-leaf text-lg"></i>
                                 </div>
-                                <h4 class="text-xl md:text-2xl font-serif text-white mb-1">Nutritional Supplement</h4>
-                                <div class="h-[1px] w-0 bg-marriott-sky group-hover:w-12 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/80 text-xs md:text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">View Formulations <i class="fas fa-arrow-right ml-1 text-xs"></i></p>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Nutritionals</h4>
+                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
+                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 6. Other -->
-                    <div onclick="navigateToCategory('other')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-sm">
-                        <div class="relative h-56 md:h-72 overflow-hidden shimmer">
+                    <div onclick="navigateToCategory('other')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
+                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
                             <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Other Products" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
-                            <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center text-white mb-4">
-                                    <i class="fas fa-plus-circle text-sm"></i>
+                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
+                                    <i class="fas fa-plus-circle text-lg"></i>
                                 </div>
-                                <h4 class="text-xl md:text-2xl font-serif text-white mb-1">Other Formulations</h4>
-                                <div class="h-[1px] w-0 bg-marriott-sky group-hover:w-12 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/80 text-xs md:text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">View Formulations <i class="fas fa-arrow-right ml-1 text-xs"></i></p>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Other Formulations</h4>
+                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
+                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
                             </div>
                         </div>
                     </div>
@@ -355,29 +361,31 @@
     <div id="view-category" class="view-section pt-20 md:pt-24 bg-marriott-light min-h-screen">
         
         <!-- Category Hero -->
-        <div class="bg-marriott-charcoal text-white py-10 md:py-16 relative overflow-hidden border-b-4 border-marriott-sky">
-            <div class="absolute inset-0 opacity-20">
-                <img id="cat-hero-bg" src="" class="w-full h-full object-cover filter blur-sm">
+        <div class="bg-marriott-navy text-white py-12 md:py-20 relative overflow-hidden border-b-4 border-marriott-sky">
+            <div class="absolute inset-0 opacity-30">
+                <img id="cat-hero-bg" src="" class="w-full h-full object-cover filter blur-sm" onerror="this.style.display='none';">
             </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-marriott-navy to-marriott-navy/60 z-0"></div>
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <button onclick="navigateTo('home')" class="text-marriott-sky hover:text-white transition-colors flex items-center text-xs md:text-sm font-semibold tracking-wide uppercase mb-6 md:mb-8 py-2">
+                <button onclick="navigateTo('home')" class="text-marriott-sky hover:text-white transition-colors flex items-center text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 md:mb-10 py-2 bg-white/10 px-4 rounded-full w-max backdrop-blur-sm">
                     <i class="fas fa-long-arrow-alt-left mr-2"></i> Back to Portfolio
                 </button>
-                <div class="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white/10 border border-white/20 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm">
-                        <i id="cat-icon" class="fas text-lg md:text-xl text-marriott-sky shadow-glow"></i>
+                <div class="flex items-center gap-4 md:gap-5 mb-4 md:mb-6">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center shadow-xl backdrop-blur-sm">
+                        <i id="cat-icon" class="fas text-xl md:text-2xl text-marriott-sky shadow-glow"></i>
                     </div>
-                    <h1 id="cat-title" class="text-3xl md:text-5xl font-serif">Category Name</h1>
+                    <h1 id="cat-title" class="text-4xl md:text-6xl font-serif font-bold tracking-wide">Category Name</h1>
                 </div>
-                <p id="cat-desc" class="text-sm md:text-lg text-white/80 max-w-3xl font-light mt-2 md:mt-4 leading-relaxed"></p>
+                <p id="cat-desc" class="text-sm md:text-lg text-blue-100 max-w-3xl font-light mt-2 md:mt-4 leading-relaxed"></p>
             </div>
         </div>
 
         <!-- Medicine Grid -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 md:mb-10 border-b border-gray-200 pb-4 gap-4">
-                <h2 class="text-xl md:text-2xl font-serif text-marriott-navy">Available Formulations</h2>
-                <span id="cat-count" class="text-xs md:text-sm text-marriott-slate font-medium bg-white px-4 py-1.5 rounded-full shadow-sm border border-gray-100 w-max"></span>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 md:mb-12 border-b border-gray-200 pb-6 gap-4">
+                <h2 class="text-2xl md:text-3xl font-serif text-marriott-navy font-bold">Available Formulations</h2>
+                <span id="cat-count" class="text-xs md:text-sm text-marriott-navy font-bold bg-white px-5 py-2 rounded-full shadow-sm border border-gray-100 w-max uppercase tracking-widest"></span>
             </div>
             
             <div id="medicine-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
@@ -390,32 +398,37 @@
 
 
     <!-- Footer (Always Visible) -->
-    <footer id="contact" class="bg-marriott-charcoal text-white pt-16 md:pt-20 pb-8 md:pb-10 border-t-4 border-marriott-navy">
+    <footer id="contact" class="bg-marriott-charcoal text-white pt-16 md:pt-24 pb-8 md:pb-12 border-t-4 border-marriott-navy">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-12 md:mb-16">
                 
                 <!-- Brand Info -->
-                <div class="md:col-span-4">
-                    <!-- Fully Completed Footer Logo Replica -->
-                    <div class="flex items-center gap-2 mb-6 opacity-90">
-                        <svg viewBox="0 0 450 120" class="h-10 md:h-12 w-auto" xmlns="http://www.w3.org/2000/svg">
-                            <g transform="translate(10, 10)">
-                                <circle cx="28" cy="78" r="20" fill="#8AD2F1" stroke="#333" stroke-width="0.5"/>
-                                <rect x="25" y="0" width="32" height="95" rx="16" transform="rotate(28 41 47)" fill="#ffffff"/>
-                                <rect x="85" y="0" width="32" height="95" rx="16" transform="rotate(28 101 47)" fill="#ffffff"/>
-                                <text x="145" y="85" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="88" fill="#ffffff" letter-spacing="-2">ARRIOTT</text>
+                <div class="md:col-span-5">
+                    <!-- Fully Completed Footer Logo Replica in Sleek Greyscale -->
+                    <div class="flex items-center mb-8">
+                        <svg viewBox="0 0 650 160" class="h-10 md:h-14 w-auto opacity-90 hover:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg">
                                 <text x="145" y="115" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#cbd5e1" letter-spacing="1">PHARMACEUTICALS</text>
                                 <line x1="0" y1="108" x2="135" y2="108" stroke="#cbd5e1" stroke-width="2"/>
                                 <line x1="365" y1="108" x2="450" y2="108" stroke="#cbd5e1" stroke-width="2"/>
                             </g>
                         </svg>
                     </div>
-                    <p class="text-gray-400 text-sm mb-6 md:mb-8 leading-relaxed font-light">
+                    <p class="text-gray-400 text-sm md:text-base mb-8 md:mb-10 leading-relaxed font-light max-w-sm">
                         A leader in gynecological pharmaceuticals. We are dedicated to improving women's healthcare through scientifically formulated, deeply researched, and globally certified medical products.
                     </p>
-                    <a href="mailto:marriottpharmaceutical@gmail.com" class="inline-flex items-center justify-center px-6 py-3 border border-marriott-sky text-marriott-sky hover:bg-marriott-sky hover:text-marriott-charcoal transition-colors font-medium text-xs md:text-sm tracking-wide uppercase rounded-sm">
-                        Contact Distribution
-                    </a>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <a href="mailto:marriottpharmaceutical@gmail.com" class="inline-flex items-center justify-center px-8 py-4 border border-gray-600 text-white hover:bg-white hover:text-marriott-charcoal transition-all font-bold text-xs md:text-sm tracking-widest uppercase rounded-full">
+                            Contact Distribution
+                        </a>
+                        <div class="flex items-center gap-3">
+                            <a href="https://www.facebook.com/profile.php?id=61576339401187" target="_blank" aria-label="Facebook" class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all shadow-sm">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="https://www.instagram.com/marriott_pharmaceuticals/" target="_blank" aria-label="Instagram" class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 hover:border-pink-600 transition-all shadow-sm">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Spacer -->
@@ -423,44 +436,52 @@
 
                 <!-- Quick Links -->
                 <div class="md:col-span-3">
-                    <h4 class="text-white font-serif text-lg md:text-xl mb-4 md:mb-6">Corporate Info</h4>
-                    <ul class="space-y-3 md:space-y-4">
-                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center py-1"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> About the Company</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center py-1"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> Quality Policy (ISO/GMP)</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center py-1"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> Research & Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-marriott-sky transition-colors text-sm font-light flex items-center py-1"><i class="fas fa-chevron-right text-[10px] mr-2 text-marriott-sky"></i> Global Distribution</a></li>
+                    <h4 class="text-white font-serif text-xl md:text-2xl mb-6 md:mb-8 border-b border-gray-700 pb-4">Corporate Info</h4>
+                    <ul class="space-y-4 md:space-y-5">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center"><i class="fas fa-chevron-right text-[10px] mr-3 text-marriott-sky"></i> About the Company</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center"><i class="fas fa-chevron-right text-[10px] mr-3 text-marriott-sky"></i> Quality Policy (ISO/GMP)</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center"><i class="fas fa-chevron-right text-[10px] mr-3 text-marriott-sky"></i> Research & Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center"><i class="fas fa-chevron-right text-[10px] mr-3 text-marriott-sky"></i> Global Distribution</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Details -->
-                <div class="md:col-span-4">
-                    <h4 class="text-white font-serif text-lg md:text-xl mb-4 md:mb-6">Headquarters</h4>
-                    <ul class="space-y-3 md:space-y-4">
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-serif text-xl md:text-2xl mb-6 md:mb-8 border-b border-gray-700 pb-4">Headquarters</h4>
+                    <ul class="space-y-5 md:space-y-6">
                         <li class="flex items-start text-gray-400 text-sm font-light">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-marriott-sky"></i>
-                            <span class="leading-relaxed">
+                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-map-marker-alt text-marriott-sky"></i>
+                            </div>
+                            <span class="leading-relaxed pt-1">
                                 Registered office No F-107,<br>
                                 TKN ridge APTS, SY.11/2<br>
                                 Nayanappanahalli, Begur<br>
                                 Bangalore - 590068
                             </span>
                         </li>
-                        <li class="flex items-center text-gray-400 text-sm font-light pt-2">
-                            <i class="fas fa-phone-alt mr-3 text-marriott-sky"></i>
+                        <li class="flex items-center text-gray-400 text-sm font-light">
+                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-phone-alt text-marriott-sky"></i>
+                            </div>
                             <div>
                                 <span class="block">+91 9766-172-598</span>
-                                <span class="block">+91 9964-104-183</span>
+                                <span class="block mt-1">+91 9964-104-183</span>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-500 uppercase tracking-widest text-center md:text-left">
-                <p class="mb-3 md:mb-0">&copy; 2026 Marriott Pharmaceuticals PVT. LTD.</p>
-                <div class="space-x-4 md:space-x-6">
-                    <a href="#" class="hover:text-white transition-colors p-2">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors p-2">Terms of Use</a>
+            <div class="border-t border-gray-800 pt-8 mt-4 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-500 uppercase tracking-widest text-center md:text-left gap-4">
+                <div class="flex flex-col md:flex-row items-center md:gap-3">
+                    <p>&copy; 2026 Marriott Pharmaceuticals PVT. LTD. All rights reserved.</p>
+                    <span class="hidden md:inline text-gray-700">|</span>
+                    <p class="mt-2 md:mt-0">Developed by <span class="text-marriott-sky font-bold">Kunal Dongare</span></p>
+                </div>
+                <div class="space-x-6 mt-2 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
                 </div>
             </div>
         </div>
@@ -480,7 +501,7 @@
             'menstruation': {
                 title: 'Menstruation',
                 icon: 'fa-tint',
-                bgImage: 'https://images.unsplash.com/photo-1517181055531-15286526eb66?ixlib=rb-4.0.3&w=1000&q=80',
+                bgImage: 'Man-a.jpg', // Local image for category background
                 desc: 'Advanced formulations designed to regulate menstrual cycles, provide rapid relief from dysmenorrhea (cramps), and manage heavy bleeding safely and effectively.',
                 products: [
                     {
@@ -523,7 +544,7 @@
             'hormonal': {
                 title: 'Hormonal Imbalance',
                 icon: 'fa-balance-scale',
-                bgImage: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&w=1000&q=80',
+                bgImage: 'hi-a.jpg', // Local image for category background
                 desc: 'Specialized therapeutic interventions to correct hormonal imbalances, manage PCOS, and support overall endocrine health.',
                 products: [
                     {
@@ -601,7 +622,7 @@
             'antibiotic': {
                 title: 'Antibiotic',
                 icon: 'fa-capsules',
-                bgImage: 'https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&w=1000&q=80',
+                bgImage: 'ant-a.jpg', // Local image for category background
                 desc: 'Targeted, high-efficacy antibiotic therapies formulated specifically to combat respiratory, urinary, and post-operative infections.',
                 products: [
                     {
@@ -679,7 +700,7 @@
             'pregnancy': {
                 title: 'Pregnancy',
                 icon: 'fa-baby-carriage',
-                bgImage: 'https://images.unsplash.com/photo-1531525645387-7f14be1bfc75?ixlib=rb-4.0.3&w=1000&q=80',
+                bgImage: 'pre-a.jpg', // Local image for category background
                 desc: 'Premium nutritional supplements and care products designed to support maternal health and fetal development.',
                 products: [
                     {
@@ -729,7 +750,7 @@
             'nutrition': {
                 title: 'Nutritional Supplement',
                 icon: 'fa-leaf',
-                bgImage: 'https://images.unsplash.com/photo-1550572017-edb7df62058a?ixlib=rb-4.0.3&w=1000&q=80',
+                bgImage: 'ns-a.jpg', // Local image for category background
                 desc: 'Comprehensive nutritional supplements supporting bone strength, immunity, energy, and overall wellbeing.',
                 products: [
                     {
@@ -919,36 +940,35 @@
             grid.innerHTML = ''; // Clear previous
 
             if(data.products.length === 0) {
-                grid.innerHTML = `<div class="col-span-full py-12 text-center text-marriott-slate font-medium text-base md:text-lg">Product catalogue for this category is currently being updated. Please check back later.</div>`;
+                grid.innerHTML = `<div class="col-span-full py-12 text-center text-marriott-slate font-bold tracking-widest uppercase text-sm md:text-base bg-white rounded-2xl shadow-sm border border-gray-100">Product catalogue for this category is currently being updated. Please check back later.</div>`;
             } else {
                 data.products.forEach(prod => {
                     // Logic to show Price and Packing if available
                     let tagsHTML = '';
                     if(prod.mrp || prod.packing) {
                         tagsHTML = `
-                            <div class="mt-4 pt-3 md:pt-4 border-t border-gray-100 flex flex-wrap gap-2">
-                                ${prod.mrp ? `<span class="bg-marriott-light text-marriott-navy text-[10px] md:text-xs font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-sm border border-marriott-sky/30 shadow-sm">MRP: ${prod.mrp}</span>` : ''}
-                                ${prod.packing ? `<span class="bg-gray-100 text-marriott-slate text-[10px] md:text-xs font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-sm border border-gray-200 shadow-sm">Packing: ${prod.packing}</span>` : ''}
+                            <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-2">
+                                ${prod.mrp ? `<span class="bg-marriott-light text-marriott-navy text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-md border border-marriott-sky/30 shadow-sm tracking-wide">MRP: ${prod.mrp}</span>` : ''}
+                                ${prod.packing ? `<span class="bg-gray-100 text-marriott-slate text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-md border border-gray-200 shadow-sm tracking-wide">Packing: ${prod.packing}</span>` : ''}
                             </div>
                         `;
                     }
 
-                    // For the images to render clearly, using object-contain and a white background padding
-                    // Added a fallback generic pill image from Unsplash if the local file is missing.
+                    // Mobile-first optimized card structure. Image container has rounded-t-2xl on mobile, rounded-l-2xl on desktop.
                     const cardHTML = `
-                        <div class="flex flex-col sm:flex-row bg-white shadow-card hover:shadow-premium transition-all duration-300 rounded-lg overflow-hidden group border border-gray-100">
-                            <div class="w-full sm:w-2/5 h-44 md:h-56 sm:h-auto bg-white p-3 md:p-4 relative overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-gray-100">
-                                <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500" 
+                        <div class="flex flex-col sm:flex-row bg-white shadow-card hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden group border border-gray-100/50">
+                            <div class="w-full sm:w-2/5 h-48 md:h-56 sm:h-auto bg-gray-50/50 p-4 md:p-6 relative overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-gray-100">
+                                <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 drop-shadow-md" 
                                      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';">
                             </div>
-                            <div class="p-5 md:p-6 sm:w-3/5 flex flex-col justify-center">
-                                <h3 class="text-xl md:text-2xl font-serif text-marriott-navy mb-2 font-bold">${prod.name}</h3>
-                                <div class="mb-2 md:mb-3">
-                                    <span class="text-[9px] md:text-[10px] uppercase tracking-widest text-marriott-sky font-bold block mb-1">Composition</span>
-                                    <p class="text-xs md:text-sm text-marriott-charcoal font-medium leading-snug">${prod.composition}</p>
+                            <div class="p-6 md:p-8 sm:w-3/5 flex flex-col justify-center">
+                                <h3 class="text-xl md:text-2xl font-serif text-marriott-navy mb-3 font-bold">${prod.name}</h3>
+                                <div class="mb-3 md:mb-4">
+                                    <span class="text-[9px] md:text-[10px] uppercase tracking-[0.15em] text-marriott-sky font-bold block mb-1">Composition</span>
+                                    <p class="text-xs md:text-sm text-marriott-charcoal font-medium leading-relaxed">${prod.composition}</p>
                                 </div>
                                 <div class="flex-grow">
-                                    <span class="text-[9px] md:text-[10px] uppercase tracking-widest text-marriott-sky font-bold block mb-1">Clinical Indication</span>
+                                    <span class="text-[9px] md:text-[10px] uppercase tracking-[0.15em] text-marriott-sky font-bold block mb-1">Clinical Indication</span>
                                     <p class="text-xs md:text-sm text-marriott-slate font-light leading-relaxed">${prod.uses}</p>
                                 </div>
                                 ${tagsHTML}
