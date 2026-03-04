@@ -250,7 +250,8 @@
                     <div onclick="navigateToCategory('menstruation')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
                         <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
                             <!-- Using first product image of the category as the rich background -->
-                            <img src="Man-a.jpg" alt="Menstruation" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1517181055531-15286526eb66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <!-- Note: Added onerror fallback so it NEVER looks empty even if the local image is missing -->
+                            <img src="Man-a.jpg" alt="Menstruation" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517181055531-15286526eb66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
                             <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
                             <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -267,7 +268,7 @@
                     <!-- 2. Hormonal Imbalance -->
                     <div onclick="navigateToCategory('hormonal')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
                         <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <img src="hi-a.jpg" alt="Hormonal Imbalance" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <img src="hi-a.jpg" alt="Hormonal Imbalance" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
                             <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
                             <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -284,7 +285,7 @@
                     <!-- 3. Antibiotic -->
                     <div onclick="navigateToCategory('antibiotic')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
                         <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <img src="ant-a.jpg" alt="Antibiotic" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <img src="ant-a.jpg" alt="Antibiotic" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
                             <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
                             <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -301,7 +302,7 @@
                     <!-- 4. Pregnancy -->
                     <div onclick="navigateToCategory('pregnancy')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
                         <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <img src="pre-a.jpg" alt="Pregnancy" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1531525645387-7f14be1bfc75?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <img src="pre-a.jpg" alt="Pregnancy" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531525645387-7f14be1bfc75?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
                             <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
                             <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -318,7 +319,7 @@
                     <!-- 5. Nutritional Supplement -->
                     <div onclick="navigateToCategory('nutrition')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
                         <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <img src="ns-a.jpg" alt="Nutritional Supplement" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.src='https://images.unsplash.com/photo-1550572017-edb7df62058a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                            <img src="ns-a.jpg" alt="Nutritional Supplement" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1550572017-edb7df62058a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
                             <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
                             <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -407,15 +408,27 @@
                     <!-- Fully Completed Footer Logo Replica in Sleek Greyscale -->
                     <div class="flex items-center mb-8">
                         <svg viewBox="0 0 650 160" class="h-10 md:h-14 w-auto opacity-90 hover:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg">
-                                <text x="145" y="115" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#cbd5e1" letter-spacing="1">PHARMACEUTICALS</text>
-                                <line x1="0" y1="108" x2="135" y2="108" stroke="#cbd5e1" stroke-width="2"/>
-                                <line x1="365" y1="108" x2="450" y2="108" stroke="#cbd5e1" stroke-width="2"/>
+                            <g transform="translate(10, 10)">
+                                <!-- Grey Dot -->
+                                <circle cx="45" cy="95" r="28" fill="#94a3b8"/>
+                                <!-- Light Grey Pills -->
+                                <rect x="50" y="5" width="40" height="115" rx="20" transform="rotate(30 70 62)" fill="#f1f5f9"/>
+                                <rect x="130" y="5" width="40" height="115" rx="20" transform="rotate(30 150 62)" fill="#f1f5f9"/>
+                                <!-- Text ARRIOTT -->
+                                <text x="200" y="105" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="115" fill="#f1f5f9" letter-spacing="-3">ARRIOTT</text>
+                                <!-- Text PHARMACEUTICALS -->
+                                <text x="215" y="142" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#94a3b8" letter-spacing="1.5">PHARMACEUTICALS</text>
+                                <!-- Lines -->
+                                <line x1="0" y1="135" x2="200" y2="135" stroke="#94a3b8" stroke-width="3"/>
+                                <line x1="475" y1="135" x2="640" y2="135" stroke="#94a3b8" stroke-width="3"/>
                             </g>
                         </svg>
                     </div>
                     <p class="text-gray-400 text-sm md:text-base mb-8 md:mb-10 leading-relaxed font-light max-w-sm">
                         A leader in gynecological pharmaceuticals. We are dedicated to improving women's healthcare through scientifically formulated, deeply researched, and globally certified medical products.
                     </p>
+                    
+                    <!-- Buttons and Social Links -->
                     <div class="flex flex-wrap gap-4 items-center">
                         <a href="mailto:marriottpharmaceutical@gmail.com" class="inline-flex items-center justify-center px-8 py-4 border border-gray-600 text-white hover:bg-white hover:text-marriott-charcoal transition-all font-bold text-xs md:text-sm tracking-widest uppercase rounded-full">
                             Contact Distribution
@@ -435,7 +448,7 @@
                 <div class="hidden md:block md:col-span-1"></div>
 
                 <!-- Quick Links -->
-                <div class="md:col-span-3">
+                <div class="md:col-span-3 mt-8 md:mt-0">
                     <h4 class="text-white font-serif text-xl md:text-2xl mb-6 md:mb-8 border-b border-gray-700 pb-4">Corporate Info</h4>
                     <ul class="space-y-4 md:space-y-5">
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center"><i class="fas fa-chevron-right text-[10px] mr-3 text-marriott-sky"></i> About the Company</a></li>
@@ -446,11 +459,11 @@
                 </div>
 
                 <!-- Contact Details -->
-                <div class="md:col-span-3">
+                <div class="md:col-span-3 mt-8 md:mt-0">
                     <h4 class="text-white font-serif text-xl md:text-2xl mb-6 md:mb-8 border-b border-gray-700 pb-4">Headquarters</h4>
                     <ul class="space-y-5 md:space-y-6">
                         <li class="flex items-start text-gray-400 text-sm font-light">
-                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-4 shrink-0">
+                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-4 shrink-0 mt-1">
                                 <i class="fas fa-map-marker-alt text-marriott-sky"></i>
                             </div>
                             <span class="leading-relaxed pt-1">
@@ -955,9 +968,10 @@
                     }
 
                     // Mobile-first optimized card structure. Image container has rounded-t-2xl on mobile, rounded-l-2xl on desktop.
+                    // Added a fallback generic pill image from Unsplash if the local file is missing.
                     const cardHTML = `
                         <div class="flex flex-col sm:flex-row bg-white shadow-card hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden group border border-gray-100/50">
-                            <div class="w-full sm:w-2/5 h-48 md:h-56 sm:h-auto bg-gray-50/50 p-4 md:p-6 relative overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-gray-100">
+                            <div class="w-full sm:w-2/5 h-56 md:h-56 sm:h-auto bg-gray-50/50 p-4 md:p-6 relative overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-gray-100">
                                 <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 drop-shadow-md" 
                                      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';">
                             </div>
