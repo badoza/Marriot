@@ -1,8 +1,12 @@
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open('marriott-store').then((cache) => {
-      // Caching core files for offline fallback
-      return cache.addAll(['/', '/index.html', '/products.json']);
+      // Updated paths for GitHub Pages sub-directory
+      return cache.addAll([
+        '/Marriot/', 
+        '/Marriot/index.html', 
+        '/Marriot/products.json'
+      ]);
     })
   );
 });
