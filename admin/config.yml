@@ -5,6 +5,7 @@ backend:
 
 media_folder: "/" # Uploads images to the root folder
 public_folder: "/"
+site_url: "https://badoza.github.io/Marriot/"
 
 collections:
   - name: "catalog"
