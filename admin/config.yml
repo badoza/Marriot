@@ -1,0 +1,76 @@
+backend:
+  name: github
+  # REPLACE THIS with your github username/repository name (e.g. kunal/marriott-app)
+  repo: your-username/your-repo-name 
+  branch: main 
+
+media_folder: "/" # Uploads images to the root folder
+public_folder: "/"
+
+collections:
+  - name: "catalog"
+    label: "Product Catalog"
+    files:
+      - file: "products.json"
+        name: "products"
+        label: "Update Medicines"
+        fields:
+          # Configuration for Menstruation Category
+          - name: menstruation
+            label: Menstruation Category
+            widget: object
+            fields:
+              - {name: title, widget: string}
+              - {name: icon, widget: string}
+              - {name: bgImage, widget: string}
+              - {name: desc, widget: text}
+              - name: products
+                label: Medicines
+                widget: list
+                fields:
+                  - {name: name, widget: string}
+                  - {name: composition, widget: string}
+                  - {name: uses, widget: text}
+                  - {name: image, widget: image}
+                  - {name: mrp, widget: string, required: false}
+                  - {name: packing, widget: string, required: false}
+
+          # Configuration for Hormonal Category
+          - name: hormonal
+            label: Hormonal Imbalance Category
+            widget: object
+            fields:
+              - {name: title, widget: string}
+              - {name: icon, widget: string}
+              - {name: bgImage, widget: string}
+              - {name: desc, widget: text}
+              - name: products
+                label: Medicines
+                widget: list
+                fields:
+                  - {name: name, widget: string}
+                  - {name: composition, widget: string}
+                  - {name: uses, widget: text}
+                  - {name: image, widget: image}
+                  - {name: mrp, widget: string, required: false}
+                  - {name: packing, widget: string, required: false}
+          
+          # Configuration for Antibiotic Category
+          - name: antibiotic
+            label: Antibiotic Category
+            widget: object
+            fields:
+              - {name: title, widget: string}
+              - {name: icon, widget: string}
+              - {name: bgImage, widget: string}
+              - {name: desc, widget: text}
+              - name: products
+                label: Medicines
+                widget: list
+                fields:
+                  - {name: name, widget: string}
+                  - {name: composition, widget: string}
+                  - {name: uses, widget: text}
+                  - {name: image, widget: image}
+                  - {name: mrp, widget: string, required: false}
+                  - {name: packing, widget: string, required: false}
