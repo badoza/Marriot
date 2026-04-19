@@ -59,16 +59,6 @@
         .logo-container { position: relative; overflow: hidden; display: inline-block; border-radius: 8px; }
         .logo-container::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); animation: shine 6s infinite; pointer-events: none; }
         @keyframes shine { 0% { left: -100%; } 15% { left: 200%; } 100% { left: 200%; } }
-
-        /* MAGIC CSS: Turns your White JPG into a Transparent Grey Footer Logo */
-        .footer-logo-grey {
-            filter: invert(1) grayscale(1) brightness(0.85);
-            mix-blend-mode: screen;
-        }
-        .footer-logo-grey:hover {
-            filter: invert(1) grayscale(1) brightness(1.2);
-            opacity: 1;
-        }
     </style>
 </head>
 <body class="bg-marriott-light text-marriott-charcoal font-sans antialiased overflow-x-hidden">
@@ -78,7 +68,18 @@
             <div class="flex justify-between items-center h-20 md:h-24">
                 
                 <div class="flex items-center cursor-pointer logo-container px-2 py-1" onclick="navigateTo('home')" title="Go to Homepage">
-                    <img id="primary-logo" src="Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="h-12 md:h-16 w-auto object-contain transform hover:scale-105 transition-transform duration-300" onerror="this.style.display='none';">
+                    <img id="primary-logo" src="/Marriot/Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="h-12 md:h-16 w-auto object-contain transform hover:scale-105 transition-transform duration-300" 
+                         onerror="this.style.display='none'; document.getElementById('svg-fallback-logo').style.display='block';">
+                    
+                    <svg id="svg-fallback-logo" viewBox="0 0 900 220" class="h-10 md:h-14 w-auto transform hover:scale-105 transition-transform duration-300" style="display: none;" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="130" r="35" fill="#69BEEB"/>
+                        <rect x="110" y="10" width="55" height="150" rx="27" transform="rotate(30 137 85)" fill="#00478F"/>
+                        <rect x="200" y="10" width="55" height="150" rx="27" transform="rotate(30 227 85)" fill="#00478F"/>
+                        <text x="310" y="135" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="140" fill="#4D5A7A" letter-spacing="-3">ARRIOTT</text>
+                        <text x="325" y="185" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#222222" letter-spacing="1">PHARMACEUTICALS</text>
+                        <line x1="80" y1="175" x2="305" y2="175" stroke="#4D5A7A" stroke-width="3"/>
+                        <line x1="685" y1="175" x2="880" y2="175" stroke="#4D5A7A" stroke-width="3"/>
+                    </svg>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-10">
@@ -212,8 +213,16 @@
                 
                 <div class="md:col-span-5">
                     
-                    <div class="mb-8 w-56 md:w-64 cursor-pointer" onclick="navigateTo('home')">
-                        <img src="Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="w-full h-auto object-contain opacity-80 footer-logo-grey transition-all duration-300" onerror="this.style.display='none';">
+                    <div class="mb-8 w-full max-w-[280px] cursor-pointer" onclick="navigateTo('home')">
+                        <svg viewBox="0 0 900 220" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="130" r="35" fill="#94a3b8"/>
+                            <rect x="110" y="10" width="55" height="150" rx="27" transform="rotate(30 137 85)" fill="#f1f5f9"/>
+                            <rect x="200" y="10" width="55" height="150" rx="27" transform="rotate(30 227 85)" fill="#f1f5f9"/>
+                            <text x="310" y="135" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="140" fill="#f1f5f9" letter-spacing="-3">ARRIOTT</text>
+                            <text x="325" y="185" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#94a3b8" letter-spacing="1">PHARMACEUTICALS</text>
+                            <line x1="80" y1="175" x2="305" y2="175" stroke="#94a3b8" stroke-width="3"/>
+                            <line x1="685" y1="175" x2="880" y2="175" stroke="#94a3b8" stroke-width="3"/>
+                        </svg>
                     </div>
 
                     <p class="text-gray-400 text-sm md:text-base mb-8 md:mb-10 leading-relaxed font-light max-w-sm">
