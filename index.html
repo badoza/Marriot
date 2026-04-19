@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marriott Pharmaceutical | Premium Women's Healthcare</title>
     
-    <link rel="manifest" href="/Marriot/manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#00478F">
-    <link rel="apple-touch-icon" href="/Marriot/icon.png">
+    <link rel="apple-touch-icon" href="./icon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -40,22 +40,17 @@
         }
     </script>
     <style>
-        /* Smooth transitions for the SPA routing */
         .view-section { display: none; opacity: 0; transition: opacity 0.5s ease-in-out; }
         .view-section.active { display: block; opacity: 1; }
         
-        /* Premium Image Hover Effects */
-        .premium-card-img { transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease; filter: brightness(0.9) contrast(1.05); }
-        .group:hover .premium-card-img { transform: scale(1.08); filter: brightness(1) contrast(1.1); }
+        .premium-card-img { transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease; filter: brightness(0.7) contrast(1.1); }
+        .group:hover .premium-card-img { transform: scale(1.08); filter: brightness(0.9) contrast(1.15); }
         
-        /* Elegant Gradient Overlay tailored for product images as backgrounds */
-        .gradient-overlay { background: linear-gradient(to top, rgba(0, 71, 143, 0.98) 0%, rgba(0, 71, 143, 0.7) 40%, rgba(77, 90, 122, 0.1) 100%); }
+        .gradient-overlay { background: linear-gradient(to top, rgba(0, 71, 143, 0.98) 0%, rgba(0, 71, 143, 0.6) 50%, rgba(77, 90, 122, 0.2) 100%); }
 
-        /* Loading shimmer for images */
         .shimmer { background: #f6f7f8; background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%); background-repeat: no-repeat; background-size: 800px 100%; animation-duration: 1.5s; animation-fill-mode: forwards; animation-iteration-count: infinite; animation-name: placeholderShimmer; animation-timing-function: linear; }
         @keyframes placeholderShimmer { 0% { background-position: -468px 0; } 100% { background-position: 468px 0; } }
 
-        /* Creative Logo Animation: Metallic Shine Sweep */
         .logo-container { position: relative; overflow: hidden; display: inline-block; border-radius: 8px; }
         .logo-container::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); animation: shine 6s infinite; pointer-events: none; }
         @keyframes shine { 0% { left: -100%; } 15% { left: 200%; } 100% { left: 200%; } }
@@ -67,8 +62,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20 md:h-24">
                 
-                <div class="flex items-center cursor-pointer logo-container px-2 py-1" onclick="navigateTo('home')" title="Go to Homepage">
-                    <img id="primary-logo" src="/Marriot/Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="h-12 md:h-16 w-auto object-contain transform hover:scale-105 transition-transform duration-300" 
+                <div class="flex items-center cursor-pointer logo-container px-2 py-1" onclick="navigateTo('home')">
+                    <img id="primary-logo" src="./Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="h-10 md:h-14 w-auto object-contain transform hover:scale-105 transition-transform duration-300" 
                          onerror="this.style.display='none'; document.getElementById('svg-fallback-logo').style.display='block';">
                     
                     <svg id="svg-fallback-logo" viewBox="0 0 900 220" class="h-10 md:h-14 w-auto transform hover:scale-105 transition-transform duration-300" style="display: none;" xmlns="http://www.w3.org/2000/svg">
@@ -121,16 +116,13 @@
                         <span class="text-marriott-navy font-bold tracking-[0.2em] uppercase text-xs md:text-sm">Advancing Women's Health</span>
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-7xl font-serif text-marriott-charcoal leading-tight mb-6 md:mb-8">
-                        Science-driven.<br>
-                        <span class="text-marriott-navy">Empowering lives.</span>
+                        Science-driven.<br><span class="text-marriott-navy">Empowering lives.</span>
                     </h1>
                     <p class="text-base md:text-lg text-marriott-slate mb-8 md:mb-10 leading-relaxed font-light">
                         Marriott Pharmaceuticals develops premier gynecological and therapeutic solutions. We blend rigorous clinical research with uncompromising quality to support women at every stage of life.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-marriott-navy text-white font-bold hover:bg-marriott-slate transition-colors shadow-premium tracking-widest uppercase text-xs md:text-sm text-center rounded-full">
-                            Explore Therapeutics
-                        </button>
+                        <button onclick="document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-marriott-navy text-white font-bold hover:bg-marriott-slate transition-colors shadow-premium tracking-widest uppercase text-xs md:text-sm text-center rounded-full">Explore Therapeutics</button>
                     </div>
                 </div>
             </div>
@@ -139,58 +131,39 @@
         <div class="bg-marriott-navy border-t-4 border-marriott-sky">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 md:py-16 divide-x divide-white/20">
-                    <div class="text-center px-2 md:px-4">
-                        <p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">WHO</p>
-                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">GMP Certified</p>
-                    </div>
-                    <div class="text-center px-2 md:px-4">
-                        <p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">ISO</p>
-                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">9001:2015 Quality</p>
-                    </div>
-                    <div class="text-center px-2 md:px-4">
-                        <p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">15+</p>
-                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">Years Experience</p>
-                    </div>
-                    <div class="text-center px-2 md:px-4">
-                        <p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">100%</p>
-                        <p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">Efficacy Tested</p>
-                    </div>
+                    <div class="text-center px-2 md:px-4"><p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">WHO</p><p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">GMP Certified</p></div>
+                    <div class="text-center px-2 md:px-4"><p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">ISO</p><p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">9001:2015 Quality</p></div>
+                    <div class="text-center px-2 md:px-4"><p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">15+</p><p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">Years Experience</p></div>
+                    <div class="text-center px-2 md:px-4"><p class="text-4xl md:text-5xl font-serif text-white mb-2 font-bold">100%</p><p class="text-[10px] md:text-xs text-marriott-sky uppercase tracking-[0.2em] font-bold">Efficacy Tested</p></div>
                 </div>
             </div>
         </div>
 
         <div id="categories-section" class="py-16 md:py-24 bg-marriott-light relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16">
                     <div class="max-w-2xl">
                         <h2 class="text-xs md:text-sm font-bold text-marriott-sky uppercase tracking-[0.2em] mb-2 md:mb-3">Our Portfolio</h2>
                         <h3 class="text-3xl md:text-5xl font-serif text-marriott-navy font-bold">Therapeutic Areas</h3>
                     </div>
                 </div>
-                
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="home-category-grid">
                     </div>
             </div>
         </div>
     </div>
-    <div id="view-category" class="view-section pt-20 md:pt-24 bg-marriott-light min-h-screen">
-        
-        <div class="bg-marriott-navy text-white py-12 md:py-20 relative overflow-hidden border-b-4 border-marriott-sky">
-            <div class="absolute inset-0 opacity-40">
-                <img id="cat-hero-bg" src="" class="w-full h-full object-cover filter blur-[2px]" onerror="this.style.display='none';">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-r from-marriott-navy to-marriott-navy/70 z-0"></div>
 
+    <div id="view-category" class="view-section pt-20 md:pt-24 bg-marriott-light min-h-screen">
+        <div class="bg-marriott-navy text-white py-12 md:py-20 relative overflow-hidden border-b-4 border-marriott-sky">
+            <div class="absolute inset-0 opacity-40"><img id="cat-hero-bg" src="" class="w-full h-full object-cover filter blur-[2px]" onerror="this.style.display='none';"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-marriott-navy to-marriott-navy/80 z-0"></div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <button onclick="navigateTo('home')" class="text-marriott-sky hover:text-white transition-colors flex items-center text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 md:mb-10 py-2 bg-white/10 px-4 rounded-full w-max backdrop-blur-sm border border-white/10 hover:bg-white/20">
                     <i class="fas fa-long-arrow-alt-left mr-2"></i> Back to Portfolio
                 </button>
                 <div class="flex items-center gap-4 md:gap-5 mb-4 md:mb-6">
-                    <div class="w-12 h-12 md:w-16 md:h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center shadow-xl backdrop-blur-sm">
-                        <i id="cat-icon" class="fas text-xl md:text-2xl text-marriott-sky shadow-glow"></i>
-                    </div>
-                    <h1 id="cat-title" class="text-4xl md:text-6xl font-serif font-bold tracking-wide">Category Name</h1>
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center shadow-xl backdrop-blur-sm"><i id="cat-icon" class="fas text-xl md:text-2xl text-marriott-sky shadow-glow"></i></div>
+                    <h1 id="cat-title" class="text-4xl md:text-6xl font-serif font-bold tracking-wide">...</h1>
                 </div>
                 <p id="cat-desc" class="text-sm md:text-lg text-blue-50 max-w-3xl font-light mt-2 md:mt-4 leading-relaxed"></p>
             </div>
@@ -205,41 +178,34 @@
             <div id="medicine-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
                 </div>
         </div>
-        
     </div>
+
     <footer id="contact" class="bg-marriott-charcoal text-white pt-16 md:pt-24 pb-8 md:pb-12 border-t-4 border-marriott-navy">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-12 md:mb-16">
                 
                 <div class="md:col-span-5">
                     
-                    <div class="mb-8 w-full max-w-[280px] cursor-pointer" onclick="navigateTo('home')">
-                        <svg viewBox="0 0 900 220" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="100" cy="130" r="35" fill="#94a3b8"/>
-                            <rect x="110" y="10" width="55" height="150" rx="27" transform="rotate(30 137 85)" fill="#f1f5f9"/>
-                            <rect x="200" y="10" width="55" height="150" rx="27" transform="rotate(30 227 85)" fill="#f1f5f9"/>
-                            <text x="310" y="135" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="140" fill="#f1f5f9" letter-spacing="-3">ARRIOTT</text>
-                            <text x="325" y="185" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#94a3b8" letter-spacing="1">PHARMACEUTICALS</text>
-                            <line x1="80" y1="175" x2="305" y2="175" stroke="#94a3b8" stroke-width="3"/>
-                            <line x1="685" y1="175" x2="880" y2="175" stroke="#94a3b8" stroke-width="3"/>
+                    <div class="mb-8 w-64 md:w-80 cursor-pointer" onclick="navigateTo('home')">
+                        <svg viewBox="0 0 800 200" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="70" cy="140" r="30" fill="#94a3b8"/>
+                            <rect x="80" y="20" width="50" height="140" rx="25" transform="rotate(30 105 90)" fill="#e2e8f0"/>
+                            <rect x="160" y="20" width="50" height="140" rx="25" transform="rotate(30 185 90)" fill="#e2e8f0"/>
+                            <text x="250" y="145" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="130" fill="#e2e8f0" letter-spacing="-2">ARRIOTT</text>
+                            <text x="260" y="185" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#94a3b8" letter-spacing="1">PHARMACEUTICALS</text>
+                            <line x1="10" y1="178" x2="245" y2="178" stroke="#94a3b8" stroke-width="2"/>
+                            <line x1="525" y1="178" x2="790" y2="178" stroke="#94a3b8" stroke-width="2"/>
                         </svg>
                     </div>
 
                     <p class="text-gray-400 text-sm md:text-base mb-8 md:mb-10 leading-relaxed font-light max-w-sm">
                         A leader in gynecological pharmaceuticals. We are dedicated to improving women's healthcare through scientifically formulated, deeply researched, and globally certified medical products.
                     </p>
-                    
                     <div class="flex flex-wrap gap-4 items-center">
-                        <a href="mailto:marriottpharmaceutical@gmail.com" class="inline-flex items-center justify-center px-8 py-4 border border-gray-600 text-white hover:bg-white hover:text-marriott-charcoal transition-all font-bold text-xs md:text-sm tracking-widest uppercase rounded-full">
-                            Contact Distribution
-                        </a>
+                        <a href="mailto:marriottpharmaceutical@gmail.com" class="inline-flex items-center justify-center px-8 py-4 border border-gray-600 text-white hover:bg-white hover:text-marriott-charcoal transition-all font-bold text-xs md:text-sm tracking-widest uppercase rounded-full">Contact Distribution</a>
                         <div class="flex items-center gap-3">
-                            <a href="https://www.facebook.com/profile.php?id=61576339401187" target="_blank" aria-label="Facebook" class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all shadow-sm">
-                                <i class="fab fa-facebook-f text-lg"></i>
-                            </a>
-                            <a href="https://www.instagram.com/marriott_pharmaceuticals/" target="_blank" aria-label="Instagram" class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 hover:border-pink-600 transition-all shadow-sm">
-                                <i class="fab fa-instagram text-xl"></i>
-                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61576339401187" target="_blank" class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all shadow-sm"><i class="fab fa-facebook-f text-lg"></i></a>
+                            <a href="https://www.instagram.com/marriott_pharmaceuticals/" target="_blank" class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 transition-all shadow-sm"><i class="fab fa-instagram text-xl"></i></a>
                         </div>
                     </div>
                 </div>
@@ -260,24 +226,12 @@
                     <h4 class="text-white font-serif text-xl md:text-2xl mb-6 md:mb-8 border-b border-gray-700 pb-4">Headquarters</h4>
                     <ul class="space-y-5 md:space-y-6">
                         <li class="flex items-start text-gray-400 text-sm font-light">
-                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-4 shrink-0 mt-1">
-                                <i class="fas fa-map-marker-alt text-marriott-sky"></i>
-                            </div>
-                            <span class="leading-relaxed pt-1">
-                                Registered office No F-107,<br>
-                                TKN ridge APTS, SY.11/2<br>
-                                Nayanappanahalli, Begur<br>
-                                Bangalore - 590068
-                            </span>
+                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-4 shrink-0 mt-1"><i class="fas fa-map-marker-alt text-marriott-sky"></i></div>
+                            <span class="leading-relaxed pt-1">Registered office No F-107,<br>TKN ridge APTS, SY.11/2<br>Nayanappanahalli, Begur<br>Bangalore - 590068</span>
                         </li>
                         <li class="flex items-center text-gray-400 text-sm font-light">
-                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-4 shrink-0">
-                                <i class="fas fa-phone-alt text-marriott-sky"></i>
-                            </div>
-                            <div>
-                                <span class="block">+91 9766-172-598</span>
-                                <span class="block mt-1">+91 9964-104-183</span>
-                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-4 shrink-0"><i class="fas fa-phone-alt text-marriott-sky"></i></div>
+                            <div><span class="block">+91 9766-172-598</span><span class="block mt-1">+91 9964-104-183</span></div>
                         </li>
                     </ul>
                 </div>
@@ -285,9 +239,9 @@
             
             <div class="border-t border-gray-800 pt-8 mt-4 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-500 uppercase tracking-widest text-center md:text-left gap-4">
                 <div class="flex flex-col md:flex-row items-center md:gap-3">
-                    <p>&copy; 2026 Marriott Pharmaceuticals PVT. LTD. All rights reserved.</p>
+                    <p>&copy; 2026 Marriott Pharmaceuticals PVT. LTD.</p>
                     <span class="hidden md:inline text-gray-700">|</span>
-                    <p class="mt-2 md:mt-0">Developed by <span class="text-marriott-sky font-bold">Kunal Dongare</span></p>
+                    <p class="mt-2 md:mt-0 text-gray-400">Developed by <span class="text-marriott-sky font-bold">Kunal Dongare</span></p>
                 </div>
                 <div class="space-x-6 mt-2 md:mt-0">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -302,25 +256,114 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        // PWA Service Worker Registration
+        // PWA Service Worker (Relative Paths)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/Marriot/sw.js').catch(err => console.log('Service Worker Failed', err));
+                navigator.serviceWorker.register('./sw.js').catch(err => console.log('Service Worker Failed', err));
             });
         }
 
-        // Dynamic Loading from JSON
-        let productDatabase = {};
-
-        async function loadProducts() {
-            try {
-                const res = await fetch('/Marriot/products.json');
-                productDatabase = await res.json();
-                renderHomeCategories();
-            } catch (err) {
-                console.error("Failed to load products.json", err);
+        // Real Database mapped to your uploaded images
+        const productDatabase = {
+            'menstruation': {
+                title: 'Menstruation',
+                icon: 'fa-tint',
+                bgImage: './Man-a.jpg',
+                desc: 'Advanced formulations designed to regulate menstrual cycles, provide rapid relief from dysmenorrhea (cramps), and manage heavy bleeding safely and effectively.',
+                products: [
+                    { name: 'Drotifair-M Tablets', composition: 'Drotaverine Hydrochloride 80 mg and Mefenamic Acid 250 mg', uses: 'Relieve menstrual cramps, abdominal pain, and spasms.', image: './Man-a.jpg', mrp: null, packing: null },
+                    { name: 'Drotifair-A', composition: 'Drotaverine & Aceclofenac', uses: 'Relieve menstrual cramps, abdominal discomfort, and inflammation effectively.', image: './man-b.jpg', mrp: null, packing: null },
+                    { name: 'Trexofez-E', composition: 'Tranexamic Acid and Etamsylate (250mg each)', uses: 'Manage heavy menstrual bleeding, reduce blood loss, and control abnormal uterine bleeding.', image: './man-c.jpg', mrp: '₹175', packing: '10x1x10' },
+                    { name: 'MPFluc-150', composition: 'Fluconazole 150mg', uses: 'Treat vaginal yeast infections, oral thrush, and systemic fungal infections.', image: './man-d.jpg', mrp: '₹27 / 2 tabs', packing: '10x5x2' },
+                    { name: 'Fyzomol-M Forte', composition: 'Mefenamic Acid IP 500mg & Paracetamol IP 325mg', uses: 'Effective relief from menstrual pain, inflammation, and fever.', image: './man-e.jpg', mrp: '₹95 / strip', packing: '10x10' }
+                ]
+            },
+            'hormonal': {
+                title: 'Hormonal Imbalance',
+                icon: 'fa-balance-scale',
+                bgImage: './hi-a.jpg',
+                desc: 'Specialized therapeutic interventions to correct hormonal imbalances, manage PCOS, and support overall endocrine health.',
+                products: [
+                    { name: 'Gestimend-200', composition: 'Natural Micronised Progesterone BP 200mg', uses: 'Hormonal regulation and support.', image: './hi-a.jpg' },
+                    { name: 'Cortirem-100 Injection', composition: 'Hydrocortisone IP 100mg', uses: 'Potent corticosteroid therapy.', image: './hi-b.jpg' },
+                    { name: 'Nortifer 5 Tablets', composition: 'Norethisterone 5mg', uses: 'Regulate menstrual cycles and manage hormonal disorders.', image: './hi-c.jpg' },
+                    { name: 'Nortifer CR 10 Tablets', composition: 'Norethisterone (Controlled-release)', uses: 'Effective management of menstrual disorders and hormonal imbalance.', image: './hi-d.jpg' },
+                    { name: 'Dydroit 10', composition: 'Dydrogesterone 10mg', uses: 'Treat hormonal imbalance, irregular menstruation, and support early pregnancy.', image: './hi-e.jpg', mrp: '₹650', packing: '10x1x10' },
+                    { name: 'Gestimend-SR 300', composition: 'Progesterone (Sustained Release) 300mg', uses: 'Support early pregnancy, treat hormonal imbalance, and prevent miscarriage.', image: './hi-f.jpg', mrp: '₹369', packing: '10x1x10' },
+                    { name: 'HERPAISE NEXT', composition: 'Myo-Inositol, N-Acetylcysteine, D-Chiro Inositol, Folic Acid, and Vitamin D3', uses: 'Support hormonal balance, ovarian function, and reproductive health in women.', image: './hi-g.jpg' },
+                    { name: 'Letroflix-2.5', composition: 'Letrozole 2.5mg', uses: 'Effective treatment for hormonal imbalance-related conditions such as infertility and PCOS.', image: './hi-h.jpg', mrp: '₹260', packing: '20x5' },
+                    { name: 'CLOMICAB 50', composition: 'Clomifene Citrate IP 50mg', uses: 'Treat infertility in women by stimulating ovulation.', image: './hi-i.jpg', mrp: '₹99', packing: '10x10' },
+                    { name: 'Medtriot 10', composition: 'Medroxyprogesterone Acetate IP 10mg', uses: 'Managing menstrual disorders and hormonal imbalance in women.', image: './hi-j.jpg', mrp: '₹60.48', packing: '10x10' }
+                ]
+            },
+            'antibiotic': {
+                title: 'Antibiotic',
+                icon: 'fa-capsules',
+                bgImage: './ant-a.jpg',
+                desc: 'Targeted, high-efficacy antibiotic therapies formulated specifically to combat respiratory, urinary, and post-operative infections.',
+                products: [
+                    { name: 'Cefxtrem-100', composition: 'Cefixime 100mg', uses: 'Broad-spectrum antibiotic used to treat respiratory, urinary, and ear infections.', image: './ant-a.jpg', mrp: '₹99', packing: '10x10' },
+                    { name: 'Ceftain-200', composition: 'Cefpodoxime 200mg', uses: 'Broad-spectrum oral antibiotic used to treat respiratory, urinary, and skin infections.', image: './ant-b.jpg', mrp: '₹190', packing: '10x10' },
+                    { name: 'Tazofax-4.5g', composition: 'Piperacillin 4000mg & Tazobactam 500mg', uses: 'Injectable antibiotic to treat severe bacterial infections.', image: './ant-c.jpg', mrp: '₹455 / vial' },
+                    { name: 'Amoxyact-Kid 228.5', composition: 'Amoxycillin 200mg & Clavulanic Acid 28.5mg', uses: 'Used in children to treat respiratory, ear, and urinary infections.', image: './ant-d.jpg', mrp: '₹198', packing: '10x10' },
+                    { name: 'Pimecel Injection', composition: 'Cefepime', uses: 'Antibiotic used to treat severe bacterial infections.', image: './ant-e.jpg' },
+                    { name: 'Nitrofax-SR Tablets', composition: 'Nitrofurantoin (Sustained release)', uses: 'Effective and prolonged relief from urinary tract infections.', image: './ant-f.jpg' },
+                    { name: 'Ritxone-TAZ', composition: 'Ceftriaxone 1000mg & Tazobactam 125mg', uses: 'Broad-spectrum injectable antibiotic for respiratory tract infections.', image: './ant-g.jpg', mrp: '₹198' },
+                    { name: 'Ceftain-100', composition: 'Cefpodoxime 100mg', uses: 'Cephalosporin antibiotic to treat respiratory infections.', image: './ant-h.jpg', mrp: '₹145', packing: '10x10' },
+                    { name: 'Ritxone Injection', composition: 'Ceftriaxone 1000mg', uses: 'Powerful third-generation antibiotic used for treating bacterial infections.', image: './ant-i.jpg', mrp: '₹69.85', packing: '1gm' },
+                    { name: 'Cefxtrem-Plus', composition: 'Cefixime 50mg & Ofloxacin 50mg', uses: 'Powerful antibiotic suspension effective in treating bacterial infections.', image: './ant-j.jpg', mrp: '₹140', packing: '30ml' }
+                ]
+            },
+            'pregnancy': {
+                title: 'Pregnancy',
+                icon: 'fa-baby-carriage',
+                bgImage: './pre-a.jpg',
+                desc: 'Premium nutritional supplements and care products designed to support maternal health and fetal development.',
+                products: [
+                    { name: 'GESTIMEND Injection', composition: 'Hydroxyprogesterone Caproate', uses: 'Helps prevent preterm labor and support pregnancy.', image: './pre-a.jpg' },
+                    { name: 'FOLILOM-DHA', composition: 'Folic Acid 5mg & DHA 200mg', uses: 'Essential for fetal brain development and reducing neural tube defects.', image: './pre-b.jpg', mrp: '₹125', packing: '10x1x10' },
+                    { name: 'Herpraise-D3 Tablets', composition: 'L-Methyl Folate, Methylcobalamin, DHA, Pyridoxal-5-Phosphate, & Vitamin D3', uses: 'For nerve health and prenatal support.', image: './pre-c.jpg', mrp: '₹160', packing: '10x1x10' },
+                    { name: 'Ondtrem', composition: 'Ondansetron Hydrochloride I.P 4mg', uses: 'Effective in preventing nausea and vomiting due to chemotherapy, surgery, or pregnancy.', image: './pre-d.jpg', mrp: '₹58', packing: '10x10' },
+                    { name: 'Maridox-OD', composition: 'Doxylamine 20mg, Pyridoxine 5mg, & Folic Acid 20mg', uses: 'Treats morning sickness, nausea, and vomiting during pregnancy.', image: './pre-e.jpg', mrp: '₹90', packing: '10x10' },
+                    { name: 'ARGINEST-DHA', composition: 'L-Arginine, DHA, and Grape Seed Extract', uses: 'Supports fetal development, improves placental blood flow, and enhances maternal health.', image: './pre-f.jpg' }
+                ]
+            },
+            'nutrition': {
+                title: 'Nutritional Supplement',
+                icon: 'fa-leaf',
+                bgImage: './ns-a.jpg',
+                desc: 'Comprehensive nutritional supplements supporting bone strength, immunity, energy, and overall wellbeing.',
+                products: [
+                    { name: 'Calcilan-500 Softgel Capsules', composition: 'Coral Calcium 500 mg & Vitamin D3 15 mcg', uses: 'Calcium and Vitamin D3 supplementation for bone strength.', image: './ns-a.jpg' },
+                    { name: 'EVENSEC-1000 Softgel Capsules', composition: 'Evening Primrose Oil (Standardized Extract)', uses: 'General nutritional and hormonal support.', image: './ns-b.jpg' },
+                    { name: 'CALCILAN-MAX Softgel Capsules', composition: 'Calcium Carbonate, Calcitriol, Zinc, Magnesium, Vit K2-7, L-Methyl Folate & Methylcobalamin', uses: 'Supports bone strength, improves calcium absorption, promotes nerve health, and boosts immunity.', image: './ns-c.jpg' },
+                    { name: 'Calcilan-Plus Tablets', composition: 'Calcium Citrate 1000mg, Zinc 4mg, Magnesium 100mg, & Vit D3 200 IU', uses: 'Supports strong bones and teeth, enhances calcium absorption.', image: './ns-d.jpg' },
+                    { name: 'TWINFER-S Injection', composition: 'Iron Sucrose', uses: 'Rapid correction of iron deficiency anemia, especially in pregnant women.', image: './ns-e.jpg' },
+                    { name: 'CALCILAN D3 Softgel Capsules', composition: 'Cholecalciferol 60,000 IU', uses: 'High-strength Vitamin D3 supplement for bone health, calcium absorption, and immunity.', image: './ns-f.jpg' },
+                    { name: 'CALCILAN-ISO', composition: 'Calcium, Calcitriol, and Soya Isoflavones', uses: 'Bone health and hormonal support.', image: './ns-g.jpg' },
+                    { name: 'Twinfer-XT Syrup', composition: 'Ferrous Ascorbate 30mg & Folic Acid 550mcg', uses: 'Treats iron deficiency anemia, especially during pregnancy and menstruation.', image: './ns-h.jpg', mrp: '₹145', packing: '200ml' },
+                    { name: 'TwinferActive', composition: 'Ferrous Bisglycinate (Iron), Zinc Bisglycinate, Folic Acid & Methylcobalamin', uses: 'Treats iron deficiency anemia, supports immunity, and improves energy.', image: './ns-i.jpg', mrp: '₹223', packing: '10x15' },
+                    { name: 'CONZINEXT-M', composition: 'Co-enzyme Q10, Lycopene, Omega-3 Fatty Acids & Selenium', uses: 'Boosts energy, immunity, and heart health.', image: './ns-j.jpg', mrp: '₹499', packing: '10x1x10' },
+                    { name: 'CALCILAN-FEM', composition: 'Coral Calcium, Vitamin D3, Soy Isoflavones, Magnesium Oxide & Vitamin K27', uses: 'Supports bone health and hormonal balance.', image: './ns-k.jpg' },
+                    { name: 'CONZINEXT-F', composition: 'Coenzyme Q10, L-Arginine, DHA, Zinc Sulphate, Green Tea Extract & vitamins', uses: 'Supports female reproductive health, heart function, and overall wellness.', image: './ns-l.jpg' },
+                    { name: 'TWINFER-TOTAL', composition: 'Ferrous Fumarate, Folic Acid, Vitamin B12, Biotin, Iodine & minerals', uses: 'Improves hemoglobin levels, boosts immunity, and supports maternal wellness.', image: './ns-m.jpg' },
+                    { name: 'CALCILAN Suspension', composition: 'Calcium Carbonate, Vitamin B12, & Vitamin D3', uses: 'Supports bone health and helps prevent deficiencies in growing children and adults.', image: './ns-n.jpg' },
+                    { name: 'VITALOOM Syrup', composition: 'Essential amino acids, multivitamins, and multiminerals', uses: 'Boosts energy, immunity, and overall wellness in adults and children.', image: './ns-o.jpg' },
+                    { name: 'CALCILAN-P', composition: 'Calcium, Magnesium, Phosphorus, and Zinc', uses: 'Supports strong bones, teeth, and overall mineral balance across all age groups.', image: './ns-p.jpg' },
+                    { name: 'PROTIGUIDE KIDS', composition: 'Protein supplement enriched with essential multivitamins and multiminerals', uses: 'Supports the growth, immunity, and development of children.', image: './ns-q.jpg' },
+                    { name: 'PROTIGUIDE DHA', composition: 'Protein supplement enriched with DHA, vitamins, and minerals', uses: 'Supports brain development, cognitive function, and overall health.', image: './ns-r.jpg' },
+                    { name: 'PROTIGUIDE Protein', composition: 'Protein Powder fortified with essential multivitamins and multiminerals', uses: 'Supports daily energy, immunity, and overall wellness.', image: './ns-s.jpg' },
+                    { name: 'TWINFER-MAX', composition: 'Ferric Pyrophosphate, Vitamin C, Folic Acid, and Vitamin B12', uses: 'A nutritional supplement for iron deficiency and anemia support.', image: './ns-t.jpg' }
+                ]
+            },
+            'other': {
+                title: 'Other Formulations',
+                icon: 'fa-plus-circle',
+                bgImage: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&w=1000&q=80',
+                desc: 'Products for this category are currently being updated.',
+                products: []
             }
-        }
+        };
 
         // Render Home Categories
         function renderHomeCategories() {
@@ -331,7 +374,7 @@
                 container.innerHTML += `
                     <div onclick="navigateToCategory('${key}')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
                         <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <img src="${data.bgImage}" alt="${data.title}" class="w-full h-full object-cover premium-card-img absolute inset-0">
+                            <img src="${data.bgImage}" alt="${data.title}" class="w-full h-full object-cover premium-card-img absolute inset-0" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517181055531-15286526eb66?ixlib=rb-4.0.3&w=600&q=80';">
                             <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
                             <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -393,8 +436,8 @@
                     const cardHTML = `
                         <div class="flex flex-col sm:flex-row bg-white shadow-card hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden group border border-gray-100/50">
                             <div class="w-full sm:w-2/5 h-56 md:h-56 sm:h-auto bg-gray-50/50 p-4 md:p-6 relative overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-gray-100">
-                                <img src="/Marriot/${prod.image}" alt="${prod.name}" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 drop-shadow-md" 
-                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';">
+                                <img src="./${prod.image}" alt="${prod.name}" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 drop-shadow-md" 
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&w=400&q=80';">
                             </div>
                             <div class="p-6 md:p-8 sm:w-3/5 flex flex-col justify-center">
                                 <h3 class="text-xl md:text-2xl font-serif text-marriott-navy mb-3 font-bold">${prod.name}</h3>
@@ -418,7 +461,10 @@
         }
 
         // Boot up
-        loadProducts();
+        // Note: For this local/static version, I am loading directly from the variable above so it works seamlessly without a server. 
+        // If using Decap CMS, you would call fetch('products.json') here instead.
+        renderHomeCategories();
+
     </script>
 
 </body>
