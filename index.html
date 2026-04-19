@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marriott Pharmaceutical | Premium Women's Healthcare</title>
+    
+    <link rel="manifest" href="/Marriot/manifest.json">
+    <meta name="theme-color" content="#00478F">
+    <link rel="apple-touch-icon" href="/Marriot/icon.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Premium Typography: Playfair for elegant headings, Inter for clean medical data -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <script>
@@ -37,134 +41,58 @@
     </script>
     <style>
         /* Smooth transitions for the SPA routing */
-        .view-section {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .view-section.active {
-            display: block;
-            opacity: 1;
-        }
+        .view-section { display: none; opacity: 0; transition: opacity 0.5s ease-in-out; }
+        .view-section.active { display: block; opacity: 1; }
         
         /* Premium Image Hover Effects */
-        .premium-card-img {
-            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease;
-            filter: brightness(0.9) contrast(1.05);
-        }
-        .group:hover .premium-card-img {
-            transform: scale(1.08);
-            filter: brightness(1) contrast(1.1);
-        }
+        .premium-card-img { transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease; filter: brightness(0.9) contrast(1.05); }
+        .group:hover .premium-card-img { transform: scale(1.08); filter: brightness(1) contrast(1.1); }
         
         /* Elegant Gradient Overlay tailored for product images as backgrounds */
-        .gradient-overlay {
-            background: linear-gradient(to top, rgba(0, 71, 143, 0.98) 0%, rgba(0, 71, 143, 0.7) 40%, rgba(77, 90, 122, 0.1) 100%);
-        }
+        .gradient-overlay { background: linear-gradient(to top, rgba(0, 71, 143, 0.98) 0%, rgba(0, 71, 143, 0.7) 40%, rgba(77, 90, 122, 0.1) 100%); }
 
         /* Loading shimmer for images */
-        .shimmer {
-            background: #f6f7f8;
-            background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
-            background-repeat: no-repeat;
-            background-size: 800px 100%; 
-            animation-duration: 1.5s;
-            animation-fill-mode: forwards; 
-            animation-iteration-count: infinite;
-            animation-name: placeholderShimmer;
-            animation-timing-function: linear;
-        }
-        @keyframes placeholderShimmer {
-            0% { background-position: -468px 0; }
-            100% { background-position: 468px 0; }
-        }
+        .shimmer { background: #f6f7f8; background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%); background-repeat: no-repeat; background-size: 800px 100%; animation-duration: 1.5s; animation-fill-mode: forwards; animation-iteration-count: infinite; animation-name: placeholderShimmer; animation-timing-function: linear; }
+        @keyframes placeholderShimmer { 0% { background-position: -468px 0; } 100% { background-position: 468px 0; } }
 
-        /* Creative Header Logo Animation: Metallic Shine Sweep */
-        .logo-container {
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-            border-radius: 8px;
-        }
-        .logo-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
-            transform: skewX(-25deg);
-            animation: shine 6s infinite;
-            pointer-events: none;
-        }
-        @keyframes shine {
-            0% { left: -100%; }
-            15% { left: 200%; }
-            100% { left: 200%; }
-        }
-
-        /* MAGICAL FOOTER LOGO CSS: Turns White JPG to Transparent Grey */
-        .footer-logo-fx {
-            /* Invert flips white BG to black, grayscale makes colors grey, brightness boosts the grey */
-            filter: invert(1) grayscale(1) brightness(1.8);
-            /* Screen mode makes the black background completely invisible, leaving only the light logo! */
-            mix-blend-mode: screen;
-            transition: all 0.5s ease;
-            opacity: 0.85;
-        }
-        .footer-logo-fx:hover {
-            opacity: 1;
-            filter: invert(1) grayscale(1) brightness(2.5) drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
-            transform: scale(1.05) translateY(-2px);
-        }
+        /* Creative Logo Animation: Metallic Shine Sweep */
+        .logo-container { position: relative; overflow: hidden; display: inline-block; border-radius: 8px; }
+        .logo-container::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); animation: shine 6s infinite; pointer-events: none; }
+        @keyframes shine { 0% { left: -100%; } 15% { left: 200%; } 100% { left: 200%; } }
     </style>
 </head>
 <body class="bg-marriott-light text-marriott-charcoal font-sans antialiased overflow-x-hidden">
 
-    <!-- Premium Navigation -->
     <nav class="bg-white/95 backdrop-blur-xl fixed w-full z-50 border-b border-gray-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20 md:h-24">
                 
-                <!-- BRAND LOGO AREA -->
                 <div class="flex items-center cursor-pointer logo-container px-2 py-1" onclick="navigateTo('home')" title="Go to Homepage">
-                    <!-- Tries to load the real image first -->
                     <img id="primary-logo" src="Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="h-12 md:h-16 w-auto object-contain transform hover:scale-105 transition-transform duration-300" 
                          onerror="this.style.display='none'; document.getElementById('svg-fallback-logo').style.display='block';">
                     
-                    <!-- PERFECT SVG REPLICA FALLBACK (Official Colors) -->
                     <svg id="svg-fallback-logo" viewBox="0 0 650 160" class="h-10 md:h-14 w-auto transform hover:scale-105 transition-transform duration-300" style="display: none;" xmlns="http://www.w3.org/2000/svg">
                         <g transform="translate(10, 10)">
-                            <!-- Light Blue Circle -->
                             <circle cx="45" cy="95" r="28" fill="#8AD2F1"/>
-                            <!-- Dark Blue Pill 1 -->
                             <rect x="50" y="5" width="40" height="115" rx="20" transform="rotate(30 70 62)" fill="#113F8C"/>
-                            <!-- Dark Blue Pill 2 -->
                             <rect x="130" y="5" width="40" height="115" rx="20" transform="rotate(30 150 62)" fill="#113F8C"/>
-                            <!-- Text ARRIOTT -->
                             <text x="200" y="105" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="115" fill="#4D5A7A" letter-spacing="-3">ARRIOTT</text>
-                            <!-- Text PHARMACEUTICALS -->
                             <text x="215" y="142" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#222" letter-spacing="1.5">PHARMACEUTICALS</text>
-                            <!-- Lines -->
                             <line x1="0" y1="135" x2="200" y2="135" stroke="#4D5A7A" stroke-width="3"/>
                             <line x1="475" y1="135" x2="640" y2="135" stroke="#4D5A7A" stroke-width="3"/>
                         </g>
                     </svg>
                 </div>
                 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-10">
                     <button onclick="navigateTo('home')" class="text-marriott-slate hover:text-marriott-navy font-bold transition duration-300 text-sm tracking-widest uppercase">Home</button>
                     <button onclick="navigateTo('home')" class="text-marriott-slate hover:text-marriott-navy font-bold transition duration-300 text-sm tracking-widest uppercase">About Firm</button>
                     <button onclick="navigateTo('home'); setTimeout(() => document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'}), 100);" class="text-marriott-slate hover:text-marriott-navy font-bold transition duration-300 text-sm tracking-widest uppercase">Therapeutic Areas</button>
-                    
                     <a href="#contact" class="bg-marriott-navy hover:bg-marriott-slate text-white px-8 py-3 rounded-full font-bold transition-colors duration-300 shadow-premium text-sm tracking-wide uppercase">
                         Partner With Us
                     </a>
                 </div>
 
-                <!-- Mobile Hamburger Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button onclick="toggleMobileMenu()" class="text-marriott-navy focus:outline-none p-2 bg-marriott-light rounded-lg shadow-sm border border-gray-100">
                         <i class="fas fa-bars text-xl"></i>
@@ -173,7 +101,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Panel (Frosted glass for premium mobile feel) -->
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-2xl absolute w-full shadow-2xl border-b border-gray-100 z-40 rounded-b-3xl">
             <div class="flex flex-col px-6 pt-6 pb-10 space-y-6">
                 <button onclick="navigateTo('home'); toggleMobileMenu()" class="text-left text-marriott-slate font-bold uppercase tracking-widest text-sm border-b border-gray-100 pb-3 hover:text-marriott-navy">Home</button>
@@ -183,12 +110,8 @@
         </div>
     </nav>
 
-    <!-- ========================================== -->
-    <!-- VIEW 1: HOME PAGE                          -->
-    <!-- ========================================== -->
     <div id="view-home" class="view-section active pt-20 md:pt-24">
         
-        <!-- Premium Hero Section -->
         <div class="relative bg-white">
             <div class="absolute inset-0 z-0">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Laboratory Research" class="w-full h-full object-cover opacity-10">
@@ -220,7 +143,6 @@
             </div>
         </div>
 
-        <!-- Classy Statistics / Trust Bar -->
         <div class="bg-marriott-navy border-t-4 border-marriott-sky">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 md:py-16 divide-x divide-white/20">
@@ -244,7 +166,6 @@
             </div>
         </div>
 
-        <!-- Therapeutic Categories Grid -->
         <div id="categories-section" class="py-16 md:py-24 bg-marriott-light relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -258,129 +179,13 @@
                     </p>
                 </div>
                 
-                <!-- Elegant 3-Column Grid using Generic, Minimalist, Premium Photography -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    
-                    <!-- 1. Menstruation -->
-                    <div onclick="navigateToCategory('menstruation')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
-                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <!-- Abstract sleek pink/red wave -->
-                            <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Menstruation Abstract" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
-                                    <i class="fas fa-tint text-lg"></i>
-                                </div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Menstruation</h4>
-                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
-                            </div>
-                        </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="home-category-grid">
                     </div>
-
-                    <!-- 2. Hormonal Imbalance -->
-                    <div onclick="navigateToCategory('hormonal')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
-                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <!-- Abstract balanced spheres -->
-                            <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hormonal Balance Abstract" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
-                                    <i class="fas fa-balance-scale text-lg"></i>
-                                </div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Hormonal Care</h4>
-                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 3. Antibiotic -->
-                    <div onclick="navigateToCategory('antibiotic')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
-                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <!-- Abstract clinical blue waves -->
-                            <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Antibiotic Abstract" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
-                                    <i class="fas fa-capsules text-lg"></i>
-                                </div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Antibiotics</h4>
-                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 4. Pregnancy -->
-                    <div onclick="navigateToCategory('pregnancy')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
-                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <!-- Soft glowing pastel abstract -->
-                            <img src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Pregnancy Abstract" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
-                                    <i class="fas fa-baby-carriage text-lg"></i>
-                                </div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Pregnancy</h4>
-                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 5. Nutritional Supplement -->
-                    <div onclick="navigateToCategory('nutrition')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
-                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <!-- Minimalist premium botanical/leaf -->
-                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nutritional Supplement Abstract" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
-                                    <i class="fas fa-leaf text-lg"></i>
-                                </div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Nutritionals</h4>
-                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 6. Other -->
-                    <div onclick="navigateToCategory('other')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
-                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
-                            <!-- Scientific / Molecule abstract -->
-                            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Other Products Abstract" class="w-full h-full object-cover premium-card-img absolute inset-0">
-                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
-                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
-                                    <i class="fas fa-plus-circle text-lg"></i>
-                                </div>
-                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">Other Formulations</h4>
-                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
-                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
     </div>
-    <!-- END VIEW 1 -->
-
-    <!-- ========================================== -->
-    <!-- VIEW 2: CATEGORY DETAIL PAGE (Dynamic)     -->
-    <!-- ========================================== -->
     <div id="view-category" class="view-section pt-20 md:pt-24 bg-marriott-light min-h-screen">
         
-        <!-- Category Hero -->
         <div class="bg-marriott-navy text-white py-12 md:py-20 relative overflow-hidden border-b-4 border-marriott-sky">
             <div class="absolute inset-0 opacity-40">
                 <img id="cat-hero-bg" src="" class="w-full h-full object-cover filter blur-[2px]" onerror="this.style.display='none';">
@@ -401,7 +206,6 @@
             </div>
         </div>
 
-        <!-- Medicine Grid -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 md:mb-12 border-b border-gray-200 pb-6 gap-4">
                 <h2 class="text-2xl md:text-3xl font-serif text-marriott-navy font-bold">Available Formulations</h2>
@@ -409,33 +213,32 @@
             </div>
             
             <div id="medicine-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
-                <!-- JavaScript will inject medicine cards here -->
-            </div>
+                </div>
         </div>
         
     </div>
-    <!-- END VIEW 2 -->
-
-
-    <!-- Footer (Always Visible) -->
     <footer id="contact" class="bg-marriott-charcoal text-white pt-16 md:pt-24 pb-8 md:pb-12 border-t-4 border-marriott-navy">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-12 md:mb-16">
                 
-                <!-- Brand Info -->
                 <div class="md:col-span-5">
                     
-                    <!-- PERFECT GREYSCALE FOOTER LOGO USING CSS BLEND MODE -->
-                    <!-- This takes Marriott.JPG.jpeg and magically turns it into a transparent grey logo! -->
-                    <div class="mb-8 w-48 md:w-64 cursor-pointer" onclick="navigateTo('home')">
-                        <img src="Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="w-full h-auto object-contain footer-logo-fx" onerror="this.style.display='none';">
+                    <div class="flex items-center mb-8">
+                        <svg viewBox="0 0 500 120" class="h-10 md:h-14 w-auto opacity-90 hover:opacity-100 transition-opacity cursor-pointer" onclick="navigateTo('home')" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(10, 10)">
+                                <circle cx="28" cy="82" r="22" fill="#94a3b8"/>
+                                <path d="M 35 70 L 60 20 A 15 15 0 0 1 85 30 L 60 80 A 15 15 0 0 1 35 70 Z" fill="#f1f5f9"/>
+                                <path d="M 90 70 L 115 20 A 15 15 0 0 1 140 30 L 115 80 A 15 15 0 0 1 90 70 Z" fill="#f1f5f9"/>
+                                <text x="155" y="85" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="80" fill="#f1f5f9" letter-spacing="-3">ARRIOTT</text>
+                                <text x="165" y="112" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#94a3b8" letter-spacing="1">PHARMACEUTICALS</text>
+                            </g>
+                        </svg>
                     </div>
 
                     <p class="text-gray-400 text-sm md:text-base mb-8 md:mb-10 leading-relaxed font-light max-w-sm">
                         A leader in gynecological pharmaceuticals. We are dedicated to improving women's healthcare through scientifically formulated, deeply researched, and globally certified medical products.
                     </p>
                     
-                    <!-- Buttons and Social Links -->
                     <div class="flex flex-wrap gap-4 items-center">
                         <a href="mailto:marriottpharmaceutical@gmail.com" class="inline-flex items-center justify-center px-8 py-4 border border-gray-600 text-white hover:bg-white hover:text-marriott-charcoal transition-all font-bold text-xs md:text-sm tracking-widest uppercase rounded-full">
                             Contact Distribution
@@ -451,10 +254,8 @@
                     </div>
                 </div>
 
-                <!-- Spacer -->
                 <div class="hidden md:block md:col-span-1"></div>
 
-                <!-- Quick Links -->
                 <div class="md:col-span-3 mt-8 md:mt-0">
                     <h4 class="text-white font-serif text-xl md:text-2xl mb-6 md:mb-8 border-b border-gray-700 pb-4">Corporate Info</h4>
                     <ul class="space-y-4 md:space-y-5">
@@ -465,7 +266,6 @@
                     </ul>
                 </div>
 
-                <!-- Contact Details -->
                 <div class="md:col-span-3 mt-8 md:mt-0">
                     <h4 class="text-white font-serif text-xl md:text-2xl mb-6 md:mb-8 border-b border-gray-700 pb-4">Headquarters</h4>
                     <ul class="space-y-5 md:space-y-6">
@@ -507,446 +307,68 @@
         </div>
     </footer>
 
-
-    <!-- SPA JavaScript Logic & Real Medicine Data -->
     <script>
-        // Mobile menu toggle logic
         function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        // Premium Generic Abstract Backgrounds for Categories
-        const premiumBackgrounds = {
-            menstruation: 'https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-            hormonal: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-            antibiotic: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-            pregnancy: 'https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-            nutrition: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-            other: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-        };
+        // 1. PWA Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/Marriot/sw.js').catch(err => console.log('Service Worker Failed', err));
+            });
+        }
 
-        // Real database of medicines categorized by therapeutic area
-        const productDatabase = {
-            'menstruation': {
-                title: 'Menstruation',
-                icon: 'fa-tint',
-                bgImage: premiumBackgrounds.menstruation,
-                desc: 'Advanced formulations designed to regulate menstrual cycles, provide rapid relief from dysmenorrhea (cramps), and manage heavy bleeding safely and effectively.',
-                products: [
-                    {
-                        name: 'Drotifair-M Tablets',
-                        composition: 'Drotaverine Hydrochloride 80 mg and Mefenamic Acid 250 mg',
-                        uses: 'Relieve menstrual cramps, abdominal pain, and spasms.',
-                        image: 'Man-a.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Drotifair-A',
-                        composition: 'Drotaverine & Aceclofenac',
-                        uses: 'Relieve menstrual cramps, abdominal discomfort, and inflammation effectively.',
-                        image: 'man-b.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Trexofez-E',
-                        composition: 'Tranexamic Acid and Etamsylate (250mg each)',
-                        uses: 'Manage heavy menstrual bleeding, reduce blood loss, and control abnormal uterine bleeding.',
-                        image: 'man-c.jpg',
-                        mrp: '₹175', packing: '10x1x10'
-                    },
-                    {
-                        name: 'MPFluc-150',
-                        composition: 'Fluconazole 150mg',
-                        uses: 'Treat vaginal yeast infections, oral thrush, and systemic fungal infections.',
-                        image: 'man-d.jpg',
-                        mrp: '₹27 / 2 tabs', packing: '10x5x2'
-                    },
-                    {
-                        name: 'Fyzomol-M Forte',
-                        composition: 'Mefenamic Acid IP 500mg & Paracetamol IP 325mg',
-                        uses: 'Effective relief from menstrual pain, inflammation, and fever.',
-                        image: 'man-e.jpg',
-                        mrp: '₹95 / strip', packing: '10x10 tablets'
-                    }
-                ]
-            },
-            'hormonal': {
-                title: 'Hormonal Imbalance',
-                icon: 'fa-balance-scale',
-                bgImage: premiumBackgrounds.hormonal,
-                desc: 'Specialized therapeutic interventions to correct hormonal imbalances, manage PCOS, and support overall endocrine health.',
-                products: [
-                    {
-                        name: 'Gestimend-200',
-                        composition: 'Natural Micronised Progesterone BP 200mg',
-                        uses: 'Hormonal regulation and support.',
-                        image: 'hi-a.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Cortirem-100 Injection',
-                        composition: 'Hydrocortisone IP 100mg',
-                        uses: 'Potent corticosteroid therapy.',
-                        image: 'hi-b.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Nortifer 5 Tablets',
-                        composition: 'Norethisterone 5mg',
-                        uses: 'Regulate menstrual cycles and manage hormonal disorders.',
-                        image: 'hi-c.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Nortifer CR 10 Tablets',
-                        composition: 'Norethisterone (Controlled-release)',
-                        uses: 'Effective management of menstrual disorders and hormonal imbalance.',
-                        image: 'hi-d.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Dydroit 10',
-                        composition: 'Dydrogesterone 10mg',
-                        uses: 'Treat hormonal imbalance, irregular menstruation, and support early pregnancy.',
-                        image: 'hi-e.jpg',
-                        mrp: '₹650 / strip', packing: '10x1x10'
-                    },
-                    {
-                        name: 'Gestimend-SR 300',
-                        composition: 'Progesterone (Sustained Release) 300mg',
-                        uses: 'Support early pregnancy, treat hormonal imbalance, and prevent miscarriage.',
-                        image: 'hi-f.jpg',
-                        mrp: '₹369 / strip', packing: '10x1x10'
-                    },
-                    {
-                        name: 'HERPAISE NEXT',
-                        composition: 'Myo-Inositol, N-Acetylcysteine, D-Chiro Inositol, Folic Acid, and Vitamin D3',
-                        uses: 'Support hormonal balance, ovarian function, and reproductive health in women.',
-                        image: 'hi-g.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Letroflix-2.5',
-                        composition: 'Letrozole 2.5mg',
-                        uses: 'Effective treatment for hormonal imbalance-related conditions such as infertility and PCOS.',
-                        image: 'hi-h.jpg',
-                        mrp: '₹260 / strip', packing: '20x5'
-                    },
-                    {
-                        name: 'CLOMICAB 50',
-                        composition: 'Clomifene Citrate IP 50mg',
-                        uses: 'Treat infertility in women by stimulating ovulation.',
-                        image: 'hi-i.jpg',
-                        mrp: '₹99 / strip', packing: '10x10'
-                    },
-                    {
-                        name: 'Medtriot 10',
-                        composition: 'Medroxyprogesterone Acetate IP 10mg',
-                        uses: 'Managing menstrual disorders and hormonal imbalance in women.',
-                        image: 'hi-j.jpg',
-                        mrp: '₹60.48 / strip', packing: '10x10'
-                    }
-                ]
-            },
-            'antibiotic': {
-                title: 'Antibiotic',
-                icon: 'fa-capsules',
-                bgImage: premiumBackgrounds.antibiotic,
-                desc: 'Targeted, high-efficacy antibiotic therapies formulated specifically to combat respiratory, urinary, and post-operative infections.',
-                products: [
-                    {
-                        name: 'Cefxtrem-100',
-                        composition: 'Cefixime 100mg (Dispersible form)',
-                        uses: 'Broad-spectrum antibiotic used to treat respiratory, urinary, and ear infections, especially in children.',
-                        image: 'ant-a.jpg',
-                        mrp: '₹99 / strip', packing: '10x10'
-                    },
-                    {
-                        name: 'Ceftain-200',
-                        composition: 'Cefpodoxime 200mg',
-                        uses: 'Broad-spectrum oral antibiotic used to treat respiratory, urinary, and skin infections in adults.',
-                        image: 'ant-b.jpg',
-                        mrp: '₹190 / strip', packing: '10x10'
-                    },
-                    {
-                        name: 'Tazofax-4.5g',
-                        composition: 'Piperacillin 4000mg & Tazobactam 500mg',
-                        uses: 'Injectable antibiotic to treat severe bacterial infections including pneumonia, UTIs, and intra-abdominal infections.',
-                        image: 'ant-c.jpg',
-                        mrp: '₹455 / vial', packing: null
-                    },
-                    {
-                        name: 'Amoxyact-Kid 228.5',
-                        composition: 'Amoxycillin 200mg & Clavulanic Acid 28.5mg',
-                        uses: 'Used in children to treat respiratory, ear, and urinary infections.',
-                        image: 'ant-d.jpg',
-                        mrp: '₹198 / strip', packing: '10x10'
-                    },
-                    {
-                        name: 'Pimecel Injection',
-                        composition: 'Cefepime (4th-generation cephalosporin)',
-                        uses: 'Antibiotic used to treat severe bacterial infections.',
-                        image: 'ant-e.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Nitrofax-SR Tablets',
-                        composition: 'Nitrofurantoin (Sustained release)',
-                        uses: 'Effective and prolonged relief from urinary tract infections (UTIs).',
-                        image: 'ant-f.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Ritxone-TAZ',
-                        composition: 'Ceftriaxone 1000mg & Tazobactam 125mg',
-                        uses: 'Broad-spectrum injectable antibiotic for respiratory tract infections, UTIs, and gynecological infections.',
-                        image: 'ant-g.jpg',
-                        mrp: '₹198 / 1.125g pack', packing: null
-                    },
-                    {
-                        name: 'Ceftain-100',
-                        composition: 'Cefpodoxime 100mg (Dispersible form)',
-                        uses: 'Cephalosporin antibiotic to treat respiratory infections, UTIs, and skin infections in children.',
-                        image: 'ant-h.jpg',
-                        mrp: '₹145 / strip', packing: '10x10'
-                    },
-                    {
-                        name: 'Ritxone Injection',
-                        composition: 'Ceftriaxone 1000mg',
-                        uses: 'Powerful third-generation antibiotic used for treating bacterial infections.',
-                        image: 'ant-i.jpg',
-                        mrp: '₹69.85', packing: '1gm'
-                    },
-                    {
-                        name: 'Cefxtrem-Plus',
-                        composition: 'Cefixime 50mg & Ofloxacin 50mg',
-                        uses: 'Powerful antibiotic suspension effective in treating bacterial infections in children.',
-                        image: 'ant-j.jpg',
-                        mrp: '₹140', packing: '30ml'
-                    }
-                ]
-            },
-            'pregnancy': {
-                title: 'Pregnancy',
-                icon: 'fa-baby-carriage',
-                bgImage: premiumBackgrounds.pregnancy,
-                desc: 'Premium nutritional supplements and care products designed to support maternal health and fetal development.',
-                products: [
-                    {
-                        name: 'GESTIMEND Injection',
-                        composition: 'Hydroxyprogesterone Caproate',
-                        uses: 'Helps prevent preterm labor and support pregnancy in progesterone-deficient women.',
-                        image: 'pre-a.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'FOLILOM-DHA',
-                        composition: 'Folic Acid 5mg & DHA 200mg',
-                        uses: 'Essential for fetal brain development and reducing neural tube defects. Ideal during pregnancy.',
-                        image: 'pre-b.jpg',
-                        mrp: '₹125 / strip', packing: '10x1x10'
-                    },
-                    {
-                        name: 'Herpraise-D3 Tablets',
-                        composition: 'L-Methyl Folate, Methylcobalamin, DHA, Pyridoxal-5-Phosphate, & Vitamin D3',
-                        uses: 'For nerve health and prenatal support.',
-                        image: 'pre-c.jpg',
-                        mrp: '₹160', packing: '10x1x10'
-                    },
-                    {
-                        name: 'Ondtrem',
-                        composition: 'Ondansetron Hydrochloride I.P 4mg',
-                        uses: 'Effective in preventing nausea and vomiting due to chemotherapy, surgery, or pregnancy.',
-                        image: 'pre-d.jpg',
-                        mrp: '₹58 / strip', packing: '10x10'
-                    },
-                    {
-                        name: 'Maridox-OD',
-                        composition: 'Doxylamine 20mg, Pyridoxine (Vitamin B6) 5mg, & Folic Acid 20mg',
-                        uses: 'Treats morning sickness, nausea, and vomiting during pregnancy.',
-                        image: 'pre-e.jpg',
-                        mrp: '₹90 / strip', packing: '10x10'
-                    },
-                    {
-                        name: 'ARGINEST-DHA',
-                        composition: 'L-Arginine, DHA, and Grape Seed Extract (Sachet)',
-                        uses: 'Supports fetal development, improves placental blood flow, and enhances maternal health.',
-                        image: 'pre-f.jpg',
-                        mrp: null, packing: null
-                    }
-                ]
-            },
-            'nutrition': {
-                title: 'Nutritional Supplement',
-                icon: 'fa-leaf',
-                bgImage: premiumBackgrounds.nutrition,
-                desc: 'Comprehensive nutritional supplements supporting bone strength, immunity, energy, and overall wellbeing.',
-                products: [
-                    {
-                        name: 'Calcilan-500 Softgel Capsules',
-                        composition: 'Coral Calcium 500 mg & Vitamin D3 15 mcg',
-                        uses: 'Calcium and Vitamin D3 supplementation for bone strength.',
-                        image: 'ns-a.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'EVENSEC-1000 Softgel Capsules',
-                        composition: 'Evening Primrose Oil (Standardized Extract)',
-                        uses: 'General nutritional and hormonal support.',
-                        image: 'ns-b.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'CALCILAN-MAX Softgel Capsules',
-                        composition: 'Calcium Carbonate, Calcitriol, Zinc, Magnesium, Vit K2-7, L-Methyl Folate & Methylcobalamin',
-                        uses: 'Supports bone strength, improves calcium absorption, promotes nerve health, and boosts immunity.',
-                        image: 'ns-c.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Calcilan-Plus Tablets',
-                        composition: 'Calcium Citrate 1000mg, Zinc 4mg, Magnesium 100mg, & Vit D3 200 IU',
-                        uses: 'Supports strong bones and teeth, enhances calcium absorption. Ideal for calcium deficiency.',
-                        image: 'ns-d.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'TWINFER-S Injection',
-                        composition: 'Iron Sucrose',
-                        uses: 'Rapid correction of iron deficiency anemia, especially in pregnant women.',
-                        image: 'ns-e.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'CALCILAN D3 Softgel Capsules',
-                        composition: 'Cholecalciferol 60,000 IU',
-                        uses: 'High-strength Vitamin D3 supplement for bone health, calcium absorption, and immunity.',
-                        image: 'ns-f.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'CALCILAN-ISO',
-                        composition: 'Calcium, Calcitriol, and Soya Isoflavones',
-                        uses: 'Bone health and hormonal support.',
-                        image: 'ns-g.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'Twinfer-XT Syrup',
-                        composition: 'Ferrous Ascorbate 30mg & Folic Acid 550mcg',
-                        uses: 'Treats iron deficiency anemia, especially during pregnancy and menstruation.',
-                        image: 'ns-h.jpg',
-                        mrp: '₹145', packing: '200ml'
-                    },
-                    {
-                        name: 'TwinferActive',
-                        composition: 'Ferrous Bisglycinate (Iron), Zinc Bisglycinate, Folic Acid & Methylcobalamin',
-                        uses: 'Treats iron deficiency anemia, supports immunity, and improves energy.',
-                        image: 'ns-i.jpg',
-                        mrp: '₹223 / strip', packing: '10x15'
-                    },
-                    {
-                        name: 'CONZINEXT-M',
-                        composition: 'Co-enzyme Q10, Lycopene, Omega-3 Fatty Acids & Selenium',
-                        uses: 'Boosts energy, immunity, and heart health.',
-                        image: 'ns-j.jpg',
-                        mrp: '₹499', packing: '10x1x10'
-                    },
-                    {
-                        name: 'CALCILAN-FEM',
-                        composition: 'Coral Calcium, Vitamin D3, Soy Isoflavones, Magnesium Oxide & Vitamin K27',
-                        uses: 'Supports bone health and hormonal balance.',
-                        image: 'ns-k.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'CONZINEXT-F',
-                        composition: 'Coenzyme Q10, L-Arginine, DHA, Zinc Sulphate, Green Tea Extract & vitamins',
-                        uses: 'Supports female reproductive health, heart function, and overall wellness.',
-                        image: 'ns-l.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'TWINFER-TOTAL',
-                        composition: 'Ferrous Fumarate, Folic Acid, Vitamin B12, Biotin, Iodine & minerals',
-                        uses: 'Improves hemoglobin levels, boosts immunity, and supports maternal wellness.',
-                        image: 'ns-m.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'CALCILAN Suspension',
-                        composition: 'Calcium Carbonate, Vitamin B12, & Vitamin D3',
-                        uses: 'Supports bone health and helps prevent deficiencies in growing children and adults.',
-                        image: 'ns-n.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'VITALOOM Syrup',
-                        composition: 'Essential amino acids, multivitamins, and multiminerals',
-                        uses: 'Boosts energy, immunity, and overall wellness in adults and children.',
-                        image: 'ns-o.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'CALCILAN-P',
-                        composition: 'Calcium, Magnesium, Phosphorus, and Zinc',
-                        uses: 'Supports strong bones, teeth, and overall mineral balance across all age groups.',
-                        image: 'ns-p.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'PROTIGUIDE KIDS',
-                        composition: 'Protein supplement enriched with essential multivitamins and multiminerals',
-                        uses: 'Supports the growth, immunity, and development of children.',
-                        image: 'ns-q.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'PROTIGUIDE DHA',
-                        composition: 'Protein supplement enriched with DHA, vitamins, and minerals',
-                        uses: 'Supports brain development, cognitive function, and overall health.',
-                        image: 'ns-r.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'PROTIGUIDE Protein',
-                        composition: 'Protein Powder fortified with essential multivitamins and multiminerals',
-                        uses: 'Supports daily energy, immunity, and overall wellness.',
-                        image: 'ns-s.jpg',
-                        mrp: null, packing: null
-                    },
-                    {
-                        name: 'TWINFER-MAX',
-                        composition: 'Ferric Pyrophosphate, Vitamin C, Folic Acid, and Vitamin B12',
-                        uses: 'A nutritional supplement for iron deficiency and anemia support.',
-                        image: 'ns-t.jpg',
-                        mrp: null, packing: null
-                    }
-                ]
-            },
-            'other': {
-                title: 'Other Formulations',
-                icon: 'fa-plus-circle',
-                bgImage: premiumBackgrounds.other,
-                desc: 'Products for this category are currently being updated.',
-                products: []
+        // 2. Load Products Dynamically from JSON
+        let productDatabase = {};
+
+        async function loadProducts() {
+            try {
+                // Fetch the products.json file that your CMS updates
+                const res = await fetch('/Marriot/products.json');
+                productDatabase = await res.json();
+                renderHomeCategories();
+            } catch (err) {
+                console.error("Failed to load products.json", err);
             }
-        };
+        }
+
+        // Render Home Page Categories Dynamically
+        function renderHomeCategories() {
+            const container = document.getElementById('home-category-grid');
+            container.innerHTML = '';
+            
+            for (const [key, data] of Object.entries(productDatabase)) {
+                container.innerHTML += `
+                    <div onclick="navigateToCategory('${key}')" class="group cursor-pointer bg-white overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 rounded-2xl border border-gray-100/50">
+                        <div class="relative h-64 md:h-80 overflow-hidden shimmer bg-white">
+                            <img src="${data.bgImage}" alt="${data.title}" class="w-full h-full object-cover premium-card-img absolute inset-0">
+                            <div class="absolute inset-0 gradient-overlay opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            
+                            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center text-white mb-4 bg-white/5 backdrop-blur-sm">
+                                    <i class="fas ${data.icon} text-lg"></i>
+                                </div>
+                                <h4 class="text-2xl md:text-3xl font-serif text-white mb-1 font-bold tracking-wide">${data.title}</h4>
+                                <div class="h-[2px] w-0 bg-marriott-sky group-hover:w-16 transition-all duration-700 ease-out mt-3 mb-2"></div>
+                                <p class="text-white/90 text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 uppercase tracking-widest mt-4">View Formulations <i class="fas fa-arrow-right ml-1"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
 
         // Navigation function to switch between views
         function navigateTo(viewId) {
-            // Hide all views
             document.querySelectorAll('.view-section').forEach(el => {
                 el.classList.remove('active');
-                setTimeout(() => el.style.display = 'none', 500); // wait for fade out
+                setTimeout(() => el.style.display = 'none', 500); 
             });
 
-            // Show target view
             const targetView = document.getElementById(`view-${viewId}`);
             setTimeout(() => {
                 targetView.style.display = 'block';
-                // Trigger reflow
                 void targetView.offsetWidth;
                 targetView.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -958,22 +380,19 @@
             const data = productDatabase[categoryId];
             if (!data) return;
 
-            // Populate category header
             document.getElementById('cat-title').innerText = data.title;
             document.getElementById('cat-desc').innerText = data.desc;
             document.getElementById('cat-icon').className = `fas ${data.icon} text-lg md:text-xl text-marriott-sky shadow-glow`;
             document.getElementById('cat-hero-bg').src = data.bgImage;
-            document.getElementById('cat-count').innerText = `${data.products.length} Products Available`;
+            document.getElementById('cat-count').innerText = `${data.products ? data.products.length : 0} Products Available`;
 
-            // Populate medicine grid
             const grid = document.getElementById('medicine-grid');
-            grid.innerHTML = ''; // Clear previous
+            grid.innerHTML = ''; 
 
-            if(data.products.length === 0) {
+            if(!data.products || data.products.length === 0) {
                 grid.innerHTML = `<div class="col-span-full py-12 text-center text-marriott-slate font-bold tracking-widest uppercase text-sm md:text-base bg-white rounded-2xl shadow-sm border border-gray-100">Product catalogue for this category is currently being updated. Please check back later.</div>`;
             } else {
                 data.products.forEach(prod => {
-                    // Logic to show Price and Packing if available
                     let tagsHTML = '';
                     if(prod.mrp || prod.packing) {
                         tagsHTML = `
@@ -984,12 +403,11 @@
                         `;
                     }
 
-                    // Mobile-first optimized card structure. Image container has rounded-t-2xl on mobile, rounded-l-2xl on desktop.
-                    // Added a fallback generic pill image from Unsplash if the local file is missing.
+                    // Card structure uses your local files (e.g. Man-a.jpg) with a fallback.
                     const cardHTML = `
                         <div class="flex flex-col sm:flex-row bg-white shadow-card hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden group border border-gray-100/50">
                             <div class="w-full sm:w-2/5 h-56 md:h-56 sm:h-auto bg-gray-50/50 p-4 md:p-6 relative overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-gray-100">
-                                <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 drop-shadow-md" 
+                                <img src="/Marriot/${prod.image}" alt="${prod.name}" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 drop-shadow-md" 
                                      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584308666744-24d5e4a8d420?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';">
                             </div>
                             <div class="p-6 md:p-8 sm:w-3/5 flex flex-col justify-center">
@@ -1010,9 +428,11 @@
                 });
             }
 
-            // Navigate to view
             navigateTo('category');
         }
+
+        // Boot up the app by loading products
+        loadProducts();
     </script>
 
 </body>
