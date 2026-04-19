@@ -1,7 +1,6 @@
 backend:
   name: github
-  # REPLACE THIS with your github username/repository name (e.g. kunal/marriott-app)
-  repo: your-username/your-repo-name 
+  repo: badoza/Marriot # This must match your GitHub username and repo name exactly
   branch: main 
 
 media_folder: "/" # Uploads images to the root folder
