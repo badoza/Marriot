@@ -1,10 +1,11 @@
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open('marriott-store-v2').then((cache) => {
+    caches.open('marriott-store-v3').then((cache) => {
       return cache.addAll([
         '/Marriot/', 
         '/Marriot/index.html', 
-        '/Marriot/products.json'
+        '/Marriot/products.json',
+        '/Marriot/icon.png'
       ]);
     })
   );
@@ -15,7 +16,8 @@ self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
-        if (key !== 'marriott-store-v2') {
+        // Delete all old caches that are NOT v3
+        if (key !== 'marriott-store-v3') {
           return caches.delete(key);
         }
       }));
