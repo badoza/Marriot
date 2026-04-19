@@ -1,0 +1,100 @@
+{
+  "menstruation": {
+    "title": "Menstruation",
+    "icon": "fa-tint",
+    "bgImage": "https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "desc": "Advanced formulations designed to regulate menstrual cycles, provide rapid relief from dysmenorrhea (cramps), and manage heavy bleeding safely and effectively.",
+    "products": [
+      {"name": "Drotifair-M Tablets", "composition": "Drotaverine Hydrochloride 80 mg and Mefenamic Acid 250 mg", "uses": "Relieve menstrual cramps, abdominal pain, and spasms.", "image": "Man-a.jpg", "mrp": null, "packing": null},
+      {"name": "Drotifair-A", "composition": "Drotaverine & Aceclofenac", "uses": "Relieve menstrual cramps, abdominal discomfort, and inflammation effectively.", "image": "man-b.jpg", "mrp": null, "packing": null},
+      {"name": "Trexofez-E", "composition": "Tranexamic Acid and Etamsylate (250mg each)", "uses": "Manage heavy menstrual bleeding, reduce blood loss, and control abnormal uterine bleeding.", "image": "man-c.jpg", "mrp": "₹175", "packing": "10x1x10"},
+      {"name": "MPFluc-150", "composition": "Fluconazole 150mg", "uses": "Treat vaginal yeast infections, oral thrush, and systemic fungal infections.", "image": "man-d.jpg", "mrp": "₹27 / 2 tabs", "packing": "10x5x2"},
+      {"name": "Fyzomol-M Forte", "composition": "Mefenamic Acid IP 500mg & Paracetamol IP 325mg", "uses": "Effective relief from menstrual pain, inflammation, and fever.", "image": "man-e.jpg", "mrp": "₹95 / strip", "packing": "10x10 tablets"}
+    ]
+  },
+  "hormonal": {
+    "title": "Hormonal Imbalance",
+    "icon": "fa-balance-scale",
+    "bgImage": "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "desc": "Specialized therapeutic interventions to correct hormonal imbalances, manage PCOS, and support overall endocrine health.",
+    "products": [
+      {"name": "Gestimend-200", "composition": "Natural Micronised Progesterone BP 200mg", "uses": "Hormonal regulation and support.", "image": "hi-a.jpg"},
+      {"name": "Cortirem-100 Injection", "composition": "Hydrocortisone IP 100mg", "uses": "Potent corticosteroid therapy.", "image": "hi-b.jpg"},
+      {"name": "Nortifer 5 Tablets", "composition": "Norethisterone 5mg", "uses": "Regulate menstrual cycles and manage hormonal disorders.", "image": "hi-c.jpg"},
+      {"name": "Nortifer CR 10 Tablets", "composition": "Norethisterone (Controlled-release)", "uses": "Effective management of menstrual disorders and hormonal imbalance.", "image": "hi-d.jpg"},
+      {"name": "Dydroit 10", "composition": "Dydrogesterone 10mg", "uses": "Treat hormonal imbalance, irregular menstruation, and support early pregnancy.", "image": "hi-e.jpg", "mrp": "₹650 / strip", "packing": "10x1x10"},
+      {"name": "Gestimend-SR 300", "composition": "Progesterone (Sustained Release) 300mg", "uses": "Support early pregnancy, treat hormonal imbalance, and prevent miscarriage.", "image": "hi-f.jpg", "mrp": "₹369 / strip", "packing": "10x1x10"},
+      {"name": "HERPAISE NEXT", "composition": "Myo-Inositol, N-Acetylcysteine, D-Chiro Inositol, Folic Acid, and Vitamin D3", "uses": "Support hormonal balance, ovarian function, and reproductive health in women.", "image": "hi-g.jpg"},
+      {"name": "Letroflix-2.5", "composition": "Letrozole 2.5mg", "uses": "Effective treatment for hormonal imbalance-related conditions such as infertility and PCOS.", "image": "hi-h.jpg", "mrp": "₹260 / strip", "packing": "20x5"},
+      {"name": "CLOMICAB 50", "composition": "Clomifene Citrate IP 50mg", "uses": "Treat infertility in women by stimulating ovulation.", "image": "hi-i.jpg", "mrp": "₹99 / strip", "packing": "10x10"},
+      {"name": "Medtriot 10", "composition": "Medroxyprogesterone Acetate IP 10mg", "uses": "Managing menstrual disorders and hormonal imbalance in women.", "image": "hi-j.jpg", "mrp": "₹60.48 / strip", "packing": "10x10"}
+    ]
+  },
+  "antibiotic": {
+    "title": "Antibiotic",
+    "icon": "fa-capsules",
+    "bgImage": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "desc": "Targeted, high-efficacy antibiotic therapies formulated specifically to combat respiratory, urinary, and post-operative infections.",
+    "products": [
+      {"name": "Cefxtrem-100", "composition": "Cefixime 100mg (Dispersible form)", "uses": "Broad-spectrum antibiotic used to treat respiratory, urinary, and ear infections, especially in children.", "image": "ant-a.jpg", "mrp": "₹99 / strip", "packing": "10x10"},
+      {"name": "Ceftain-200", "composition": "Cefpodoxime 200mg", "uses": "Broad-spectrum oral antibiotic used to treat respiratory, urinary, and skin infections in adults.", "image": "ant-b.jpg", "mrp": "₹190 / strip", "packing": "10x10"},
+      {"name": "Tazofax-4.5g", "composition": "Piperacillin 4000mg & Tazobactam 500mg", "uses": "Injectable antibiotic to treat severe bacterial infections including pneumonia, UTIs, and intra-abdominal infections.", "image": "ant-c.jpg", "mrp": "₹455 / vial"},
+      {"name": "Amoxyact-Kid 228.5", "composition": "Amoxycillin 200mg & Clavulanic Acid 28.5mg", "uses": "Used in children to treat respiratory, ear, and urinary infections.", "image": "ant-d.jpg", "mrp": "₹198 / strip", "packing": "10x10"},
+      {"name": "Pimecel Injection", "composition": "Cefepime (4th-generation cephalosporin)", "uses": "Antibiotic used to treat severe bacterial infections.", "image": "ant-e.jpg"},
+      {"name": "Nitrofax-SR Tablets", "composition": "Nitrofurantoin (Sustained release)", "uses": "Effective and prolonged relief from urinary tract infections (UTIs).", "image": "ant-f.jpg"},
+      {"name": "Ritxone-TAZ", "composition": "Ceftriaxone 1000mg & Tazobactam 125mg", "uses": "Broad-spectrum injectable antibiotic for respiratory tract infections, UTIs, and gynecological infections.", "image": "ant-g.jpg", "mrp": "₹198 / 1.125g pack"},
+      {"name": "Ceftain-100", "composition": "Cefpodoxime 100mg (Dispersible form)", "uses": "Cephalosporin antibiotic to treat respiratory infections, UTIs, and skin infections in children.", "image": "ant-h.jpg", "mrp": "₹145 / strip", "packing": "10x10"},
+      {"name": "Ritxone Injection", "composition": "Ceftriaxone 1000mg", "uses": "Powerful third-generation antibiotic used for treating bacterial infections.", "image": "ant-i.jpg", "mrp": "₹69.85", "packing": "1gm"},
+      {"name": "Cefxtrem-Plus", "composition": "Cefixime 50mg & Ofloxacin 50mg", "uses": "Powerful antibiotic suspension effective in treating bacterial infections in children.", "image": "ant-j.jpg", "mrp": "₹140", "packing": "30ml"}
+    ]
+  },
+  "pregnancy": {
+    "title": "Pregnancy",
+    "icon": "fa-baby-carriage",
+    "bgImage": "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "desc": "Premium nutritional supplements and care products designed to support maternal health and fetal development.",
+    "products": [
+      {"name": "GESTIMEND Injection", "composition": "Hydroxyprogesterone Caproate", "uses": "Helps prevent preterm labor and support pregnancy in progesterone-deficient women.", "image": "pre-a.jpg"},
+      {"name": "FOLILOM-DHA", "composition": "Folic Acid 5mg & DHA 200mg", "uses": "Essential for fetal brain development and reducing neural tube defects. Ideal during pregnancy.", "image": "pre-b.jpg", "mrp": "₹125 / strip", "packing": "10x1x10"},
+      {"name": "Herpraise-D3 Tablets", "composition": "L-Methyl Folate, Methylcobalamin, DHA, Pyridoxal-5-Phosphate, & Vitamin D3", "uses": "For nerve health and prenatal support.", "image": "pre-c.jpg", "mrp": "₹160", "packing": "10x1x10"},
+      {"name": "Ondtrem", "composition": "Ondansetron Hydrochloride I.P 4mg", "uses": "Effective in preventing nausea and vomiting due to chemotherapy, surgery, or pregnancy.", "image": "pre-d.jpg", "mrp": "₹58 / strip", "packing": "10x10"},
+      {"name": "Maridox-OD", "composition": "Doxylamine 20mg, Pyridoxine (Vitamin B6) 5mg, & Folic Acid 20mg", "uses": "Treats morning sickness, nausea, and vomiting during pregnancy.", "image": "pre-e.jpg", "mrp": "₹90 / strip", "packing": "10x10"},
+      {"name": "ARGINEST-DHA", "composition": "L-Arginine, DHA, and Grape Seed Extract (Sachet)", "uses": "Supports fetal development, improves placental blood flow, and enhances maternal health.", "image": "pre-f.jpg"}
+    ]
+  },
+  "nutrition": {
+    "title": "Nutritional Supplement",
+    "icon": "fa-leaf",
+    "bgImage": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "desc": "Comprehensive nutritional supplements supporting bone strength, immunity, energy, and overall wellbeing.",
+    "products": [
+      {"name": "Calcilan-500 Softgel Capsules", "composition": "Coral Calcium 500 mg & Vitamin D3 15 mcg", "uses": "Calcium and Vitamin D3 supplementation for bone strength.", "image": "ns-a.jpg"},
+      {"name": "EVENSEC-1000 Softgel Capsules", "composition": "Evening Primrose Oil (Standardized Extract)", "uses": "General nutritional and hormonal support.", "image": "ns-b.jpg"},
+      {"name": "CALCILAN-MAX Softgel Capsules", "composition": "Calcium Carbonate, Calcitriol, Zinc, Magnesium, Vit K2-7, L-Methyl Folate & Methylcobalamin", "uses": "Supports bone strength, improves calcium absorption, promotes nerve health, and boosts immunity.", "image": "ns-c.jpg"},
+      {"name": "Calcilan-Plus Tablets", "composition": "Calcium Citrate 1000mg, Zinc 4mg, Magnesium 100mg, & Vit D3 200 IU", "uses": "Supports strong bones and teeth, enhances calcium absorption. Ideal for calcium deficiency.", "image": "ns-d.jpg"},
+      {"name": "TWINFER-S Injection", "composition": "Iron Sucrose", "uses": "Rapid correction of iron deficiency anemia, especially in pregnant women.", "image": "ns-e.jpg"},
+      {"name": "CALCILAN D3 Softgel Capsules", "composition": "Cholecalciferol 60,000 IU", "uses": "High-strength Vitamin D3 supplement for bone health, calcium absorption, and immunity.", "image": "ns-f.jpg"},
+      {"name": "CALCILAN-ISO", "composition": "Calcium, Calcitriol, and Soya Isoflavones", "uses": "Bone health and hormonal support.", "image": "ns-g.jpg"},
+      {"name": "Twinfer-XT Syrup", "composition": "Ferrous Ascorbate 30mg & Folic Acid 550mcg", "uses": "Treats iron deficiency anemia, especially during pregnancy and menstruation.", "image": "ns-h.jpg", "mrp": "₹145", "packing": "200ml"},
+      {"name": "TwinferActive", "composition": "Ferrous Bisglycinate (Iron), Zinc Bisglycinate, Folic Acid & Methylcobalamin", "uses": "Treats iron deficiency anemia, supports immunity, and improves energy.", "image": "ns-i.jpg", "mrp": "₹223 / strip", "packing": "10x15"},
+      {"name": "CONZINEXT-M", "composition": "Co-enzyme Q10, Lycopene, Omega-3 Fatty Acids & Selenium", "uses": "Boosts energy, immunity, and heart health.", "image": "ns-j.jpg", "mrp": "₹499", "packing": "10x1x10"},
+      {"name": "CALCILAN-FEM", "composition": "Coral Calcium, Vitamin D3, Soy Isoflavones, Magnesium Oxide & Vitamin K27", "uses": "Supports bone health and hormonal balance.", "image": "ns-k.jpg"},
+      {"name": "CONZINEXT-F", "composition": "Coenzyme Q10, L-Arginine, DHA, Zinc Sulphate, Green Tea Extract & vitamins", "uses": "Supports female reproductive health, heart function, and overall wellness.", "image": "ns-l.jpg"},
+      {"name": "TWINFER-TOTAL", "composition": "Ferrous Fumarate, Folic Acid, Vitamin B12, Biotin, Iodine & minerals", "uses": "Improves hemoglobin levels, boosts immunity, and supports maternal wellness.", "image": "ns-m.jpg"},
+      {"name": "CALCILAN Suspension", "composition": "Calcium Carbonate, Vitamin B12, & Vitamin D3", "uses": "Supports bone health and helps prevent deficiencies in growing children and adults.", "image": "ns-n.jpg"},
+      {"name": "VITALOOM Syrup", "composition": "Essential amino acids, multivitamins, and multiminerals", "uses": "Boosts energy, immunity, and overall wellness in adults and children.", "image": "ns-o.jpg"},
+      {"name": "CALCILAN-P", "composition": "Calcium, Magnesium, Phosphorus, and Zinc", "uses": "Supports strong bones, teeth, and overall mineral balance across all age groups.", "image": "ns-p.jpg"},
+      {"name": "PROTIGUIDE KIDS", "composition": "Protein supplement enriched with essential multivitamins and multiminerals", "uses": "Supports the growth, immunity, and development of children.", "image": "ns-q.jpg"},
+      {"name": "PROTIGUIDE DHA", "composition": "Protein supplement enriched with DHA, vitamins, and minerals", "uses": "Supports brain development, cognitive function, and overall health.", "image": "ns-r.jpg"},
+      {"name": "PROTIGUIDE Protein", "composition": "Protein Powder fortified with essential multivitamins and multiminerals", "uses": "Supports daily energy, immunity, and overall wellness.", "image": "ns-s.jpg"},
+      {"name": "TWINFER-MAX", "composition": "Ferric Pyrophosphate, Vitamin C, Folic Acid, and Vitamin B12", "uses": "A nutritional supplement for iron deficiency and anemia support.", "image": "ns-t.jpg"}
+    ]
+  },
+  "other": {
+    "title": "Other Formulations",
+    "icon": "fa-plus-circle",
+    "bgImage": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "desc": "Products for this category are currently being updated.",
+    "products": []
+  }
+}
