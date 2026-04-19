@@ -23,11 +23,11 @@
                     },
                     colors: {
                         marriott: {
-                            navy: '#00478F',    /* Logo dark blue pill */
-                            sky: '#69BEEB',     /* Logo light blue circle */
-                            slate: '#4D5A7A',   /* Logo ARRIOTT text */
-                            charcoal: '#222222',/* Logo PHARMACEUTICALS text */
-                            light: '#F8FAFC',   /* Sophisticated off-white */
+                            navy: '#00478F',    
+                            sky: '#69BEEB',     
+                            slate: '#4D5A7A',   
+                            charcoal: '#222222',
+                            light: '#F8FAFC',   
                         }
                     },
                     boxShadow: {
@@ -59,6 +59,16 @@
         .logo-container { position: relative; overflow: hidden; display: inline-block; border-radius: 8px; }
         .logo-container::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); animation: shine 6s infinite; pointer-events: none; }
         @keyframes shine { 0% { left: -100%; } 15% { left: 200%; } 100% { left: 200%; } }
+
+        /* MAGIC CSS: Turns your White JPG into a Transparent Grey Footer Logo */
+        .footer-logo-grey {
+            filter: invert(1) grayscale(1) brightness(0.85);
+            mix-blend-mode: screen;
+        }
+        .footer-logo-grey:hover {
+            filter: invert(1) grayscale(1) brightness(1.2);
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="bg-marriott-light text-marriott-charcoal font-sans antialiased overflow-x-hidden">
@@ -68,29 +78,14 @@
             <div class="flex justify-between items-center h-20 md:h-24">
                 
                 <div class="flex items-center cursor-pointer logo-container px-2 py-1" onclick="navigateTo('home')" title="Go to Homepage">
-                    <img id="primary-logo" src="Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="h-12 md:h-16 w-auto object-contain transform hover:scale-105 transition-transform duration-300" 
-                         onerror="this.style.display='none'; document.getElementById('svg-fallback-logo').style.display='block';">
-                    
-                    <svg id="svg-fallback-logo" viewBox="0 0 650 160" class="h-10 md:h-14 w-auto transform hover:scale-105 transition-transform duration-300" style="display: none;" xmlns="http://www.w3.org/2000/svg">
-                        <g transform="translate(10, 10)">
-                            <circle cx="45" cy="95" r="28" fill="#8AD2F1"/>
-                            <rect x="50" y="5" width="40" height="115" rx="20" transform="rotate(30 70 62)" fill="#113F8C"/>
-                            <rect x="130" y="5" width="40" height="115" rx="20" transform="rotate(30 150 62)" fill="#113F8C"/>
-                            <text x="200" y="105" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="115" fill="#4D5A7A" letter-spacing="-3">ARRIOTT</text>
-                            <text x="215" y="142" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#222" letter-spacing="1.5">PHARMACEUTICALS</text>
-                            <line x1="0" y1="135" x2="200" y2="135" stroke="#4D5A7A" stroke-width="3"/>
-                            <line x1="475" y1="135" x2="640" y2="135" stroke="#4D5A7A" stroke-width="3"/>
-                        </g>
-                    </svg>
+                    <img id="primary-logo" src="Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="h-12 md:h-16 w-auto object-contain transform hover:scale-105 transition-transform duration-300" onerror="this.style.display='none';">
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-10">
                     <button onclick="navigateTo('home')" class="text-marriott-slate hover:text-marriott-navy font-bold transition duration-300 text-sm tracking-widest uppercase">Home</button>
                     <button onclick="navigateTo('home')" class="text-marriott-slate hover:text-marriott-navy font-bold transition duration-300 text-sm tracking-widest uppercase">About Firm</button>
                     <button onclick="navigateTo('home'); setTimeout(() => document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'}), 100);" class="text-marriott-slate hover:text-marriott-navy font-bold transition duration-300 text-sm tracking-widest uppercase">Therapeutic Areas</button>
-                    <a href="#contact" class="bg-marriott-navy hover:bg-marriott-slate text-white px-8 py-3 rounded-full font-bold transition-colors duration-300 shadow-premium text-sm tracking-wide uppercase">
-                        Partner With Us
-                    </a>
+                    <a href="#contact" class="bg-marriott-navy hover:bg-marriott-slate text-white px-8 py-3 rounded-full font-bold transition-colors duration-300 shadow-premium text-sm tracking-wide uppercase">Partner With Us</a>
                 </div>
 
                 <div class="md:hidden flex items-center">
@@ -135,9 +130,6 @@
                         <button onclick="document.getElementById('categories-section').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-marriott-navy text-white font-bold hover:bg-marriott-slate transition-colors shadow-premium tracking-widest uppercase text-xs md:text-sm text-center rounded-full">
                             Explore Therapeutics
                         </button>
-                        <button class="px-8 py-4 border-2 border-marriott-slate text-marriott-slate font-bold hover:bg-marriott-slate hover:text-white transition-colors tracking-widest uppercase text-xs md:text-sm text-center rounded-full">
-                            Our Heritage
-                        </button>
                     </div>
                 </div>
             </div>
@@ -174,9 +166,6 @@
                         <h2 class="text-xs md:text-sm font-bold text-marriott-sky uppercase tracking-[0.2em] mb-2 md:mb-3">Our Portfolio</h2>
                         <h3 class="text-3xl md:text-5xl font-serif text-marriott-navy font-bold">Therapeutic Areas</h3>
                     </div>
-                    <p class="text-marriott-slate md:w-1/3 mt-4 md:mt-0 font-light border-l-2 border-marriott-sky pl-4 text-sm md:text-base">
-                        Select a therapeutic category below to view our comprehensive range of specialized pharmaceutical formulations.
-                    </p>
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="home-category-grid">
@@ -223,16 +212,8 @@
                 
                 <div class="md:col-span-5">
                     
-                    <div class="flex items-center mb-8">
-                        <svg viewBox="0 0 500 120" class="h-10 md:h-14 w-auto opacity-90 hover:opacity-100 transition-opacity cursor-pointer" onclick="navigateTo('home')" xmlns="http://www.w3.org/2000/svg">
-                            <g transform="translate(10, 10)">
-                                <circle cx="28" cy="82" r="22" fill="#94a3b8"/>
-                                <path d="M 35 70 L 60 20 A 15 15 0 0 1 85 30 L 60 80 A 15 15 0 0 1 35 70 Z" fill="#f1f5f9"/>
-                                <path d="M 90 70 L 115 20 A 15 15 0 0 1 140 30 L 115 80 A 15 15 0 0 1 90 70 Z" fill="#f1f5f9"/>
-                                <text x="155" y="85" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="80" fill="#f1f5f9" letter-spacing="-3">ARRIOTT</text>
-                                <text x="165" y="112" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#94a3b8" letter-spacing="1">PHARMACEUTICALS</text>
-                            </g>
-                        </svg>
+                    <div class="mb-8 w-56 md:w-64 cursor-pointer" onclick="navigateTo('home')">
+                        <img src="Marriott.JPG.jpeg" alt="Marriott Pharmaceutical" class="w-full h-auto object-contain opacity-80 footer-logo-grey transition-all duration-300" onerror="this.style.display='none';">
                     </div>
 
                     <p class="text-gray-400 text-sm md:text-base mb-8 md:mb-10 leading-relaxed font-light max-w-sm">
@@ -312,19 +293,18 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        // 1. PWA Service Worker Registration
+        // PWA Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/Marriot/sw.js').catch(err => console.log('Service Worker Failed', err));
             });
         }
 
-        // 2. Load Products Dynamically from JSON
+        // Dynamic Loading from JSON
         let productDatabase = {};
 
         async function loadProducts() {
             try {
-                // Fetch the products.json file that your CMS updates
                 const res = await fetch('/Marriot/products.json');
                 productDatabase = await res.json();
                 renderHomeCategories();
@@ -333,7 +313,7 @@
             }
         }
 
-        // Render Home Page Categories Dynamically
+        // Render Home Categories
         function renderHomeCategories() {
             const container = document.getElementById('home-category-grid');
             container.innerHTML = '';
@@ -359,7 +339,6 @@
             }
         }
 
-        // Navigation function to switch between views
         function navigateTo(viewId) {
             document.querySelectorAll('.view-section').forEach(el => {
                 el.classList.remove('active');
@@ -375,7 +354,6 @@
             }, 500);
         }
 
-        // Specific function to load a category and its products
         function navigateToCategory(categoryId) {
             const data = productDatabase[categoryId];
             if (!data) return;
@@ -403,7 +381,6 @@
                         `;
                     }
 
-                    // Card structure uses your local files (e.g. Man-a.jpg) with a fallback.
                     const cardHTML = `
                         <div class="flex flex-col sm:flex-row bg-white shadow-card hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden group border border-gray-100/50">
                             <div class="w-full sm:w-2/5 h-56 md:h-56 sm:h-auto bg-gray-50/50 p-4 md:p-6 relative overflow-hidden flex items-center justify-center border-b sm:border-b-0 sm:border-r border-gray-100">
@@ -431,7 +408,7 @@
             navigateTo('category');
         }
 
-        // Boot up the app by loading products
+        // Boot up
         loadProducts();
     </script>
 
